@@ -1,0 +1,871 @@
+<!DOCTYPE html><html data-scrapbook-source="https://jup.ag/" data-scrapbook-create="20250926130046269" data-scrapbook-adoptedstylesheet-0=":host { z-index: var(--w3m-z-index); display: block; backface-visibility: hidden; position: fixed; inset: 0px; pointer-events: none; opacity: 0; background-color: var(--wui-cover); transition: opacity 0.2s var(--wui-ease-out-power-2); will-change: opacity; }
+
+:host(.open) { opacity: 1; }
+
+:host(.embedded) { position: relative; pointer-events: unset; background: none; width: 100%; opacity: 1; }
+
+wui-card { max-width: var(--w3m-modal-width); width: 100%; position: relative; animation-name: ; animation-duration: ; animation-timing-function: ; animation-delay: ; animation-iteration-count: ; animation-direction: ; animation-play-state: ; animation-fill-mode: backwards; outline: none; transition: border-radius var(--wui-duration-lg) var(--wui-ease-out-power-1); }
+
+:host(.embedded) wui-card { max-width: 400px; }
+
+wui-card[shake=&quot;true&quot;] { animation: zoom-in 0.2s var(--wui-ease-out-power-2),
+      w3m-shake 0.5s var(--wui-ease-out-power-2); }
+
+wui-flex { overflow: hidden auto; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+
+@media (max-height: 700px) and (min-width: 431px) {
+  wui-flex { align-items: flex-start; }
+  wui-card { margin: var(--wui-spacing-xxl) 0px; }
+}
+
+@media (max-width: 430px) {
+  wui-flex { align-items: flex-end; }
+  wui-card { max-width: 100%; border-bottom-left-radius: var(--local-border-bottom-mobile-radius); border-bottom-right-radius: var(--local-border-bottom-mobile-radius); border-bottom: medium; animation: slide-in 0.2s var(--wui-ease-out-power-2); }
+  wui-card[shake=&quot;true&quot;] { animation: slide-in 0.2s var(--wui-ease-out-power-2),
+        w3m-shake 0.5s var(--wui-ease-out-power-2); }
+}
+
+@keyframes zoom-in {
+  0% { transform: scale(0.95) translateY(0px); }
+  100% { transform: scale(1) translateY(0px); }
+}
+
+@keyframes slide-in {
+  0% { transform: scale(1) translateY(50px); }
+  100% { transform: scale(1) translateY(0px); }
+}
+
+@keyframes w3m-shake {
+  0% { transform: scale(1) rotate(0deg); }
+  20% { transform: scale(1) rotate(-1deg); }
+  40% { transform: scale(1) rotate(1.5deg); }
+  60% { transform: scale(1) rotate(-1.5deg); }
+  80% { transform: scale(1) rotate(1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes w3m-view-height {
+  0% { height: var(--prev-height); }
+  100% { height: var(--new-height); }
+}"><head><meta charset="UTF-8" data-next-head=""><title data-next-head="">Jupiter: The DeFi Superapp | Jupiter</title><meta name="robots" content="index,follow" data-next-head=""><meta name="twitter:card" content="summary_large_image" data-next-head=""><meta name="twitter:site" content="jup.ag" data-next-head=""><meta name="twitter:creator" content="@JupiterExchange" data-next-head=""><meta property="og:title" content="Jupiter: The DeFi Superapp" data-next-head=""><meta property="og:description" content="Get the best price, lowest fees, and deep liquidity on Solana’s largest DEX." data-next-head=""><meta property="og:url" content="https://jup.ag/" data-next-head=""><meta property="og:type" content="website" data-next-head=""><meta property="og:image" content="https://jup.ag/meta-og/jupiter-meta-main.webp" data-next-head=""><meta property="og:image:alt" content="Jupiter Main Banner" data-next-head=""><meta property="og:locale" content="en" data-next-head=""><meta property="og:site_name" content="Jupiter" data-next-head=""><meta http-equiv="etag" content="b28e5fc482bde51dd01f03ab9ddbb8558c6ccaf2" data-next-head=""><meta name="viewport" content="width=device-width, user-scalable=no viewport-fit=cover" data-next-head=""><meta charset="utf-8"><meta name="theme-color" content="#1C2936"><meta name="description" content="Jupiter is one of the largest decentralized trading platforms and one of the most active governance communities in crypto. We're building the everything exchange for everyone."><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="shortcut icon" href="favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="https://jup.ag/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="Jupiter"><link rel="manifest" href="https://jup.ag/manifest.json" crossorigin="use-credentials"><style type="text/css">@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url("normal.woff2");unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url("normal-1.woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url("normal-2.woff2");unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url("normal-3.woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url("normal-4.woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url("normal-5.woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:300;src:url("normal-6.woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url("normal-5.woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url("normal.woff2");unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url("normal-4.woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url("normal-1.woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url("normal-6.woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url("normal-2.woff2");unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:400;src:url("normal-3.woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url("normal.woff2");unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url("normal-1.woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url("normal-6.woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url("normal-2.woff2");unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url("normal-5.woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url("normal-4.woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:500;src:url("normal-3.woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url("normal-5.woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url("normal.woff2");unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url("normal-1.woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url("normal-4.woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url("normal-3.woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url("normal-2.woff2");unicode-range:U+0370-03FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:600;src:url("normal-6.woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url("normal-5.woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url("normal-6.woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url("normal.woff2");unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url("normal-1.woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url("normal-4.woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url("normal-3.woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Inter;font-style:normal;font-weight:700;src:url("normal-2.woff2");unicode-range:U+0370-03FF;font-display:swap;}</style><style type="text/css">@font-face {font-family:Courier Prime;font-style:normal;font-weight:400;src:url("");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Courier Prime;font-style:normal;font-weight:400;src:url("");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}</style><style type="text/css">html,
+                #__next {
+                  /* Prevent scroll bar from shifting layout to the left */
+                  width: 100vw;
+                  overflow-x: clip;
+                  min-height: 100vh;
+                }
+                * {
+                    font-family: Inter, sans-serif;
+                }
+
+                body {
+                  min-height: 100vh;
+                }
+
+                .changing-theme,
+                .changing-theme * {
+                  transition: none !important;
+                }</style><link rel="stylesheet" href="cfd8c72e23f0a6fe.css" data-n-g=""><link rel="stylesheet" href="f2b27daf88f7e471.css" data-n-g=""><noscript data-n-css=""></noscript><style data-n-href="/_next/static/css/f7cfc1c4cb41bc75.css">.marquee_marquee__Ls9Ak{animation:marquee_marquee__Ls9Ak var(--marquee-duration,25s)linear infinite}@keyframes marquee_marquee__Ls9Ak{0%,15%{transform:translate(10px)}to{transform:translate(-100%)}}</style><style type="text/css">[data-sonner-toaster][dir=ltr],html[dir=ltr]{--toast-icon-margin-start:-3px;--toast-icon-margin-end:4px;--toast-svg-margin-start:-1px;--toast-svg-margin-end:0px;--toast-button-margin-start:auto;--toast-button-margin-end:0;--toast-close-button-start:0;--toast-close-button-end:unset;--toast-close-button-transform:translate(-35%, -35%)}[data-sonner-toaster][dir=rtl],html[dir=rtl]{--toast-icon-margin-start:4px;--toast-icon-margin-end:-3px;--toast-svg-margin-start:0px;--toast-svg-margin-end:-1px;--toast-button-margin-start:0;--toast-button-margin-end:auto;--toast-close-button-start:unset;--toast-close-button-end:0;--toast-close-button-transform:translate(35%, -35%)}[data-sonner-toaster]{position:fixed;width:var(--width);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;--gray1:hsl(0, 0%, 99%);--gray2:hsl(0, 0%, 97.3%);--gray3:hsl(0, 0%, 95.1%);--gray4:hsl(0, 0%, 93%);--gray5:hsl(0, 0%, 90.9%);--gray6:hsl(0, 0%, 88.7%);--gray7:hsl(0, 0%, 85.8%);--gray8:hsl(0, 0%, 78%);--gray9:hsl(0, 0%, 56.1%);--gray10:hsl(0, 0%, 52.3%);--gray11:hsl(0, 0%, 43.5%);--gray12:hsl(0, 0%, 9%);--border-radius:8px;box-sizing:border-box;padding:0;margin:0;list-style:none;outline:0;z-index:999999999;transition:transform .4s ease}@media (hover:none) and (pointer:coarse){[data-sonner-toaster][data-lifted=true]{transform:none}}[data-sonner-toaster][data-x-position=right]{right:var(--offset-right)}[data-sonner-toaster][data-x-position=left]{left:var(--offset-left)}[data-sonner-toaster][data-x-position=center]{left:50%;transform:translateX(-50%)}[data-sonner-toaster][data-y-position=top]{top:var(--offset-top)}[data-sonner-toaster][data-y-position=bottom]{bottom:var(--offset-bottom)}[data-sonner-toast]{--y:translateY(100%);--lift-amount:calc(var(--lift) * var(--gap));z-index:var(--z-index);position:absolute;opacity:0;transform:var(--y);touch-action:none;transition:transform .4s,opacity .4s,height .4s,box-shadow .2s;box-sizing:border-box;outline:0;overflow-wrap:anywhere}[data-sonner-toast][data-styled=true]{padding:16px;background:var(--normal-bg);border:1px solid var(--normal-border);color:var(--normal-text);border-radius:var(--border-radius);box-shadow:0 4px 12px rgba(0,0,0,.1);width:var(--width);font-size:13px;display:flex;align-items:center;gap:6px}[data-sonner-toast]:focus-visible{box-shadow:0 4px 12px rgba(0,0,0,.1),0 0 0 2px rgba(0,0,0,.2)}[data-sonner-toast][data-y-position=top]{top:0;--y:translateY(-100%);--lift:1;--lift-amount:calc(1 * var(--gap))}[data-sonner-toast][data-y-position=bottom]{bottom:0;--y:translateY(100%);--lift:-1;--lift-amount:calc(var(--lift) * var(--gap))}[data-sonner-toast][data-styled=true] [data-description]{font-weight:400;line-height:1.4;color:#3f3f3f}[data-rich-colors=true][data-sonner-toast][data-styled=true] [data-description]{color:inherit}[data-sonner-toaster][data-sonner-theme=dark] [data-description]{color:#e8e8e8}[data-sonner-toast][data-styled=true] [data-title]{font-weight:500;line-height:1.5;color:inherit}[data-sonner-toast][data-styled=true] [data-icon]{display:flex;height:16px;width:16px;position:relative;justify-content:flex-start;align-items:center;flex-shrink:0;margin-left:var(--toast-icon-margin-start);margin-right:var(--toast-icon-margin-end)}[data-sonner-toast][data-promise=true] [data-icon]>svg{opacity:0;transform:scale(.8);transform-origin:center;animation:sonner-fade-in .3s ease forwards}[data-sonner-toast][data-styled=true] [data-icon]>*{flex-shrink:0}[data-sonner-toast][data-styled=true] [data-icon] svg{margin-left:var(--toast-svg-margin-start);margin-right:var(--toast-svg-margin-end)}[data-sonner-toast][data-styled=true] [data-content]{display:flex;flex-direction:column;gap:2px}[data-sonner-toast][data-styled=true] [data-button]{border-radius:4px;padding-left:8px;padding-right:8px;height:24px;font-size:12px;color:var(--normal-bg);background:var(--normal-text);margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end);border:none;font-weight:500;cursor:pointer;outline:0;display:flex;align-items:center;flex-shrink:0;transition:opacity .4s,box-shadow .2s}[data-sonner-toast][data-styled=true] [data-button]:focus-visible{box-shadow:0 0 0 2px rgba(0,0,0,.4)}[data-sonner-toast][data-styled=true] [data-button]:first-of-type{margin-left:var(--toast-button-margin-start);margin-right:var(--toast-button-margin-end)}[data-sonner-toast][data-styled=true] [data-cancel]{color:var(--normal-text);background:rgba(0,0,0,.08)}[data-sonner-toaster][data-sonner-theme=dark] [data-sonner-toast][data-styled=true] [data-cancel]{background:rgba(255,255,255,.3)}[data-sonner-toast][data-styled=true] [data-close-button]{position:absolute;left:var(--toast-close-button-start);right:var(--toast-close-button-end);top:0;height:20px;width:20px;display:flex;justify-content:center;align-items:center;padding:0;color:var(--gray12);background:var(--normal-bg);border:1px solid var(--gray4);transform:var(--toast-close-button-transform);border-radius:50%;cursor:pointer;z-index:1;transition:opacity .1s,background .2s,border-color .2s}[data-sonner-toast][data-styled=true] [data-close-button]:focus-visible{box-shadow:0 4px 12px rgba(0,0,0,.1),0 0 0 2px rgba(0,0,0,.2)}[data-sonner-toast][data-styled=true] [data-disabled=true]{cursor:not-allowed}[data-sonner-toast][data-styled=true]:hover [data-close-button]:hover{background:var(--gray2);border-color:var(--gray5)}[data-sonner-toast][data-swiping=true]::before{content:'';position:absolute;left:-100%;right:-100%;height:100%;z-index:-1}[data-sonner-toast][data-y-position=top][data-swiping=true]::before{bottom:50%;transform:scaleY(3) translateY(50%)}[data-sonner-toast][data-y-position=bottom][data-swiping=true]::before{top:50%;transform:scaleY(3) translateY(-50%)}[data-sonner-toast][data-swiping=false][data-removed=true]::before{content:'';position:absolute;inset:0;transform:scaleY(2)}[data-sonner-toast][data-expanded=true]::after{content:'';position:absolute;left:0;height:calc(var(--gap) + 1px);bottom:100%;width:100%}[data-sonner-toast][data-mounted=true]{--y:translateY(0);opacity:1}[data-sonner-toast][data-expanded=false][data-front=false]{--scale:var(--toasts-before) * 0.05 + 1;--y:translateY(calc(var(--lift-amount) * var(--toasts-before))) scale(calc(-1 * var(--scale)));height:var(--front-toast-height)}[data-sonner-toast]>*{transition:opacity .4s}[data-sonner-toast][data-x-position=right]{right:0}[data-sonner-toast][data-x-position=left]{left:0}[data-sonner-toast][data-expanded=false][data-front=false][data-styled=true]>*{opacity:0}[data-sonner-toast][data-visible=false]{opacity:0;pointer-events:none}[data-sonner-toast][data-mounted=true][data-expanded=true]{--y:translateY(calc(var(--lift) * var(--offset)));height:var(--initial-height)}[data-sonner-toast][data-removed=true][data-front=true][data-swipe-out=false]{--y:translateY(calc(var(--lift) * -100%));opacity:0}[data-sonner-toast][data-removed=true][data-front=false][data-swipe-out=false][data-expanded=true]{--y:translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%));opacity:0}[data-sonner-toast][data-removed=true][data-front=false][data-swipe-out=false][data-expanded=false]{--y:translateY(40%);opacity:0;transition:transform .5s,opacity .2s}[data-sonner-toast][data-removed=true][data-front=false]::before{height:calc(var(--initial-height) + 20%)}[data-sonner-toast][data-swiping=true]{transform:var(--y) translateY(var(--swipe-amount-y,0)) translateX(var(--swipe-amount-x,0));transition:none}[data-sonner-toast][data-swiped=true]{user-select:none}[data-sonner-toast][data-swipe-out=true][data-y-position=bottom],[data-sonner-toast][data-swipe-out=true][data-y-position=top]{animation-duration:.2s;animation-timing-function:ease-out;animation-fill-mode:forwards}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=left]{animation-name:swipe-out-left}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=right]{animation-name:swipe-out-right}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=up]{animation-name:swipe-out-up}[data-sonner-toast][data-swipe-out=true][data-swipe-direction=down]{animation-name:swipe-out-down}@keyframes swipe-out-left{from{transform:var(--y) translateX(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translateX(calc(var(--swipe-amount-x) - 100%));opacity:0}}@keyframes swipe-out-right{from{transform:var(--y) translateX(var(--swipe-amount-x));opacity:1}to{transform:var(--y) translateX(calc(var(--swipe-amount-x) + 100%));opacity:0}}@keyframes swipe-out-up{from{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) - 100%));opacity:0}}@keyframes swipe-out-down{from{transform:var(--y) translateY(var(--swipe-amount-y));opacity:1}to{transform:var(--y) translateY(calc(var(--swipe-amount-y) + 100%));opacity:0}}@media (max-width:600px){[data-sonner-toaster]{position:fixed;right:var(--mobile-offset-right);left:var(--mobile-offset-left);width:100%}[data-sonner-toaster][dir=rtl]{left:calc(var(--mobile-offset-left) * -1)}[data-sonner-toaster] [data-sonner-toast]{left:0;right:0;width:calc(100% - var(--mobile-offset-left) * 2)}[data-sonner-toaster][data-x-position=left]{left:var(--mobile-offset-left)}[data-sonner-toaster][data-y-position=bottom]{bottom:var(--mobile-offset-bottom)}[data-sonner-toaster][data-y-position=top]{top:var(--mobile-offset-top)}[data-sonner-toaster][data-x-position=center]{left:var(--mobile-offset-left);right:var(--mobile-offset-right);transform:none}}[data-sonner-toaster][data-sonner-theme=light]{--normal-bg:#fff;--normal-border:var(--gray4);--normal-text:var(--gray12);--success-bg:hsl(143, 85%, 96%);--success-border:hsl(145, 92%, 87%);--success-text:hsl(140, 100%, 27%);--info-bg:hsl(208, 100%, 97%);--info-border:hsl(221, 91%, 93%);--info-text:hsl(210, 92%, 45%);--warning-bg:hsl(49, 100%, 97%);--warning-border:hsl(49, 91%, 84%);--warning-text:hsl(31, 92%, 45%);--error-bg:hsl(359, 100%, 97%);--error-border:hsl(359, 100%, 94%);--error-text:hsl(360, 100%, 45%)}[data-sonner-toaster][data-sonner-theme=light] [data-sonner-toast][data-invert=true]{--normal-bg:#000;--normal-border:hsl(0, 0%, 20%);--normal-text:var(--gray1)}[data-sonner-toaster][data-sonner-theme=dark] [data-sonner-toast][data-invert=true]{--normal-bg:#fff;--normal-border:var(--gray3);--normal-text:var(--gray12)}[data-sonner-toaster][data-sonner-theme=dark]{--normal-bg:#000;--normal-bg-hover:hsl(0, 0%, 12%);--normal-border:hsl(0, 0%, 20%);--normal-border-hover:hsl(0, 0%, 25%);--normal-text:var(--gray1);--success-bg:hsl(150, 100%, 6%);--success-border:hsl(147, 100%, 12%);--success-text:hsl(150, 86%, 65%);--info-bg:hsl(215, 100%, 6%);--info-border:hsl(223, 43%, 17%);--info-text:hsl(216, 87%, 65%);--warning-bg:hsl(64, 100%, 6%);--warning-border:hsl(60, 100%, 9%);--warning-text:hsl(46, 87%, 65%);--error-bg:hsl(358, 76%, 10%);--error-border:hsl(357, 89%, 16%);--error-text:hsl(358, 100%, 81%)}[data-sonner-toaster][data-sonner-theme=dark] [data-sonner-toast] [data-close-button]{background:var(--normal-bg);border-color:var(--normal-border);color:var(--normal-text)}[data-sonner-toaster][data-sonner-theme=dark] [data-sonner-toast] [data-close-button]:hover{background:var(--normal-bg-hover);border-color:var(--normal-border-hover)}[data-rich-colors=true][data-sonner-toast][data-type=success]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=success] [data-close-button]{background:var(--success-bg);border-color:var(--success-border);color:var(--success-text)}[data-rich-colors=true][data-sonner-toast][data-type=info]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=info] [data-close-button]{background:var(--info-bg);border-color:var(--info-border);color:var(--info-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=warning] [data-close-button]{background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning-text)}[data-rich-colors=true][data-sonner-toast][data-type=error]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}[data-rich-colors=true][data-sonner-toast][data-type=error] [data-close-button]{background:var(--error-bg);border-color:var(--error-border);color:var(--error-text)}.sonner-loading-wrapper{--size:16px;height:var(--size);width:var(--size);position:absolute;inset:0;z-index:10}.sonner-loading-wrapper[data-visible=false]{transform-origin:center;animation:sonner-fade-out .2s ease forwards}.sonner-spinner{position:relative;top:50%;left:50%;height:var(--size);width:var(--size)}.sonner-loading-bar{animation:sonner-spin 1.2s linear infinite;background:var(--gray11);border-radius:6px;height:8%;left:-10%;position:absolute;top:-3.9%;width:24%}.sonner-loading-bar:first-child{animation-delay:-1.2s;transform:rotate(.0001deg) translate(146%)}.sonner-loading-bar:nth-child(2){animation-delay:-1.1s;transform:rotate(30deg) translate(146%)}.sonner-loading-bar:nth-child(3){animation-delay:-1s;transform:rotate(60deg) translate(146%)}.sonner-loading-bar:nth-child(4){animation-delay:-.9s;transform:rotate(90deg) translate(146%)}.sonner-loading-bar:nth-child(5){animation-delay:-.8s;transform:rotate(120deg) translate(146%)}.sonner-loading-bar:nth-child(6){animation-delay:-.7s;transform:rotate(150deg) translate(146%)}.sonner-loading-bar:nth-child(7){animation-delay:-.6s;transform:rotate(180deg) translate(146%)}.sonner-loading-bar:nth-child(8){animation-delay:-.5s;transform:rotate(210deg) translate(146%)}.sonner-loading-bar:nth-child(9){animation-delay:-.4s;transform:rotate(240deg) translate(146%)}.sonner-loading-bar:nth-child(10){animation-delay:-.3s;transform:rotate(270deg) translate(146%)}.sonner-loading-bar:nth-child(11){animation-delay:-.2s;transform:rotate(300deg) translate(146%)}.sonner-loading-bar:nth-child(12){animation-delay:-.1s;transform:rotate(330deg) translate(146%)}@keyframes sonner-fade-in{0%{opacity:0;transform:scale(.8)}100%{opacity:1;transform:scale(1)}}@keyframes sonner-fade-out{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.8)}}@keyframes sonner-spin{0%{opacity:1}100%{opacity:.15}}@media (prefers-reduced-motion){.sonner-loading-bar,[data-sonner-toast],[data-sonner-toast]>*{transition:none!important;animation:none!important}}.sonner-loader{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);transform-origin:center;transition:opacity .2s,transform .2s}.sonner-loader[data-visible=false]{opacity:0;transform:scale(.8) translate(-50%,-50%)}</style><style type="text/css">[vaul-drawer]{touch-action:none;transition:transform .5s cubic-bezier(.32,.72,0,1)}[vaul-drawer][vaul-drawer-direction=bottom]{transform:translate3d(0,100%,0)}[vaul-drawer][vaul-drawer-direction=top]{transform:translate3d(0,-100%,0)}[vaul-drawer][vaul-drawer-direction=left]{transform:translate3d(-100%,0,0)}[vaul-drawer][vaul-drawer-direction=right]{transform:translate3d(100%,0,0)}.vaul-dragging .vaul-scrollable [vault-drawer-direction=top],.vaul-dragging .vaul-scrollable [vault-drawer-direction=bottom]{overflow-y:hidden!important}.vaul-dragging .vaul-scrollable [vault-drawer-direction=left],.vaul-dragging .vaul-scrollable [vault-drawer-direction=right]{overflow-x:hidden!important}[vaul-drawer][vaul-drawer-visible=true][vaul-drawer-direction=top],[vaul-drawer][vaul-drawer-visible=true][vaul-drawer-direction=bottom]{transform:translate3d(0,var(--snap-point-height, 0),0)}[vaul-drawer][vaul-drawer-visible=true][vaul-drawer-direction=left],[vaul-drawer][vaul-drawer-visible=true][vaul-drawer-direction=right]{transform:translate3d(var(--snap-point-height, 0),0,0)}[vaul-overlay]{opacity:0;transition:opacity .5s cubic-bezier(.32,.72,0,1)}[vaul-overlay][vaul-drawer-visible=true]{opacity:1}[vaul-drawer]:after{content:"";position:absolute;background:inherit;background-color:inherit}[vaul-drawer][vaul-drawer-direction=top]:after{top:initial;bottom:100%;left:0;right:0;height:200%}[vaul-drawer][vaul-drawer-direction=bottom]:after{top:100%;bottom:initial;left:0;right:0;height:200%}[vaul-drawer][vaul-drawer-direction=left]:after{left:initial;right:100%;top:0;bottom:0;width:200%}[vaul-drawer][vaul-drawer-direction=right]:after{left:100%;right:initial;top:0;bottom:0;width:200%}[vaul-overlay][vaul-snap-points=true]:not([vaul-snap-points-overlay="true"]):not([data-state="closed"]){opacity:0}[vaul-overlay][vaul-snap-points-overlay=true]:not([vaul-drawer-visible="false"]){opacity:1}@keyframes fake-animation{}@media (hover: hover) and (pointer: fine){[vaul-drawer]{user-select:none}}
+</style><style data-styled="active" data-styled-version="6.1.19">:root { --privy-border-radius-sm: 6px; --privy-border-radius-md: 12px; --privy-border-radius-mdlg: 16px; --privy-border-radius-lg: 24px; --privy-border-radius-full: 9999px; --privy-color-background: hsl(0, 0%, 100%); --privy-color-background-2: hsl(0, 0%, 96%); --privy-color-background-3: hsl(0, 0%, 92%); --privy-color-foreground: hsl(0, 0%, 12%); --privy-color-foreground-2: hsl(0, 0%, 30%); --privy-color-foreground-3: hsl(0, 0%, 57%); --privy-color-foreground-4: hsl(0, 0%, 92%); --privy-color-foreground-accent: hsl(246, 84%, 5%); --privy-color-accent: hsl(83, 81%, 73%); --privy-color-accent-light: hsl(83, 81%, 88%); --privy-color-accent-lightest: hsl(83, 81%, 98%); --privy-color-accent-dark: hsl(83, 81%, 67%); --privy-color-accent-darkest: hsl(83, 81%, 13%); --privy-color-success: hsl(147, 43%, 52%); --privy-color-success-dark: hsl(147, 43%, 36%); --privy-color-success-light: hsl(147, 43%, 92%); --privy-color-error: hsl(7, 80%, 62%); --privy-color-error-light: hsl(7, 80%, 92%); --privy-color-warn: hsl(36, 100%, 65%); --privy-color-warn-light: hsl(36, 100%, 95%); --privy-height-modal-full: 620px; --privy-height-modal-compact: 480px; }</style><style>
+      @import url("css2.css");
+      @keyframes w3m-shake {
+        0% {
+          transform: scale(1) rotate(0deg);
+        }
+        20% {
+          transform: scale(1) rotate(-1deg);
+        }
+        40% {
+          transform: scale(1) rotate(1.5deg);
+        }
+        60% {
+          transform: scale(1) rotate(-1.5deg);
+        }
+        80% {
+          transform: scale(1) rotate(1deg);
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+      }
+      @keyframes w3m-iframe-fade-out {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes w3m-iframe-zoom-in {
+        0% {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+      @keyframes w3m-iframe-zoom-in-mobile {
+        0% {
+          transform: scale(0.95);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      :root {
+        --w3m-modal-width: 360px;
+        --w3m-color-mix-strength: 0%;
+        --w3m-font-family: Inter, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;;
+        --w3m-font-size-master: 10px;
+        --w3m-border-radius-master: 4px;
+        --w3m-z-index: 999;
+
+        --wui-font-family: var(--w3m-font-family);
+
+        --wui-font-size-mini: calc(var(--w3m-font-size-master) * 0.8);
+        --wui-font-size-micro: var(--w3m-font-size-master);
+        --wui-font-size-tiny: calc(var(--w3m-font-size-master) * 1.2);
+        --wui-font-size-small: calc(var(--w3m-font-size-master) * 1.4);
+        --wui-font-size-paragraph: calc(var(--w3m-font-size-master) * 1.6);
+        --wui-font-size-medium: calc(var(--w3m-font-size-master) * 1.8);
+        --wui-font-size-large: calc(var(--w3m-font-size-master) * 2);
+        --wui-font-size-title-6: calc(var(--w3m-font-size-master) * 2.2);
+        --wui-font-size-medium-title: calc(var(--w3m-font-size-master) * 2.4);
+        --wui-font-size-2xl: calc(var(--w3m-font-size-master) * 4);
+
+        --wui-border-radius-5xs: var(--w3m-border-radius-master);
+        --wui-border-radius-4xs: calc(var(--w3m-border-radius-master) * 1.5);
+        --wui-border-radius-3xs: calc(var(--w3m-border-radius-master) * 2);
+        --wui-border-radius-xxs: calc(var(--w3m-border-radius-master) * 3);
+        --wui-border-radius-xs: calc(var(--w3m-border-radius-master) * 4);
+        --wui-border-radius-s: calc(var(--w3m-border-radius-master) * 5);
+        --wui-border-radius-m: calc(var(--w3m-border-radius-master) * 7);
+        --wui-border-radius-l: calc(var(--w3m-border-radius-master) * 9);
+        --wui-border-radius-3xl: calc(var(--w3m-border-radius-master) * 20);
+
+        --wui-font-weight-light: 400;
+        --wui-font-weight-regular: 500;
+        --wui-font-weight-medium: 600;
+        --wui-font-weight-bold: 700;
+
+        --wui-letter-spacing-2xl: -1.6px;
+        --wui-letter-spacing-medium-title: -0.96px;
+        --wui-letter-spacing-title-6: -0.88px;
+        --wui-letter-spacing-large: -0.8px;
+        --wui-letter-spacing-medium: -0.72px;
+        --wui-letter-spacing-paragraph: -0.64px;
+        --wui-letter-spacing-small: -0.56px;
+        --wui-letter-spacing-tiny: -0.48px;
+        --wui-letter-spacing-micro: -0.2px;
+        --wui-letter-spacing-mini: -0.16px;
+
+        --wui-spacing-0: 0px;
+        --wui-spacing-4xs: 2px;
+        --wui-spacing-3xs: 4px;
+        --wui-spacing-xxs: 6px;
+        --wui-spacing-2xs: 7px;
+        --wui-spacing-xs: 8px;
+        --wui-spacing-1xs: 10px;
+        --wui-spacing-s: 12px;
+        --wui-spacing-m: 14px;
+        --wui-spacing-l: 16px;
+        --wui-spacing-2l: 18px;
+        --wui-spacing-xl: 20px;
+        --wui-spacing-xxl: 24px;
+        --wui-spacing-2xl: 32px;
+        --wui-spacing-3xl: 40px;
+        --wui-spacing-4xl: 90px;
+        --wui-spacing-5xl: 95px;
+
+        --wui-icon-box-size-xxs: 14px;
+        --wui-icon-box-size-xs: 20px;
+        --wui-icon-box-size-sm: 24px;
+        --wui-icon-box-size-md: 32px;
+        --wui-icon-box-size-mdl: 36px;
+        --wui-icon-box-size-lg: 40px;
+        --wui-icon-box-size-2lg: 48px;
+        --wui-icon-box-size-xl: 64px;
+
+        --wui-icon-size-inherit: inherit;
+        --wui-icon-size-xxs: 10px;
+        --wui-icon-size-xs: 12px;
+        --wui-icon-size-sm: 14px;
+        --wui-icon-size-md: 16px;
+        --wui-icon-size-mdl: 18px;
+        --wui-icon-size-lg: 20px;
+        --wui-icon-size-xl: 24px;
+        --wui-icon-size-xxl: 28px;
+
+        --wui-wallet-image-size-inherit: inherit;
+        --wui-wallet-image-size-sm: 40px;
+        --wui-wallet-image-size-md: 56px;
+        --wui-wallet-image-size-lg: 80px;
+
+        --wui-visual-size-size-inherit: inherit;
+        --wui-visual-size-sm: 40px;
+        --wui-visual-size-md: 55px;
+        --wui-visual-size-lg: 80px;
+
+        --wui-box-size-md: 100px;
+        --wui-box-size-lg: 120px;
+
+        --wui-ease-out-power-2: cubic-bezier(0, 0, 0.22, 1);
+        --wui-ease-out-power-1: cubic-bezier(0, 0, 0.55, 1);
+
+        --wui-ease-in-power-3: cubic-bezier(0.66, 0, 1, 1);
+        --wui-ease-in-power-2: cubic-bezier(0.45, 0, 1, 1);
+        --wui-ease-in-power-1: cubic-bezier(0.3, 0, 1, 1);
+
+        --wui-ease-inout-power-1: cubic-bezier(0.45, 0, 0.55, 1);
+
+        --wui-duration-lg: 200ms;
+        --wui-duration-md: 125ms;
+        --wui-duration-sm: 75ms;
+
+        --wui-path-network-sm: path(
+          'M15.4 2.1a5.21 5.21 0 0 1 5.2 0l11.61 6.7a5.21 5.21 0 0 1 2.61 4.52v13.4c0 1.87-1 3.59-2.6 4.52l-11.61 6.7c-1.62.93-3.6.93-5.22 0l-11.6-6.7a5.21 5.21 0 0 1-2.61-4.51v-13.4c0-1.87 1-3.6 2.6-4.52L15.4 2.1Z'
+        );
+
+        --wui-path-network-md: path(
+          'M43.4605 10.7248L28.0485 1.61089C25.5438 0.129705 22.4562 0.129705 19.9515 1.61088L4.53951 10.7248C2.03626 12.2051 0.5 14.9365 0.5 17.886V36.1139C0.5 39.0635 2.03626 41.7949 4.53951 43.2752L19.9515 52.3891C22.4562 53.8703 25.5438 53.8703 28.0485 52.3891L43.4605 43.2752C45.9637 41.7949 47.5 39.0635 47.5 36.114V17.8861C47.5 14.9365 45.9637 12.2051 43.4605 10.7248Z'
+        );
+
+        --wui-path-network-lg: path(
+          'M78.3244 18.926L50.1808 2.45078C45.7376 -0.150261 40.2624 -0.150262 35.8192 2.45078L7.6756 18.926C3.23322 21.5266 0.5 26.3301 0.5 31.5248V64.4752C0.5 69.6699 3.23322 74.4734 7.6756 77.074L35.8192 93.5492C40.2624 96.1503 45.7376 96.1503 50.1808 93.5492L78.3244 77.074C82.7668 74.4734 85.5 69.6699 85.5 64.4752V31.5248C85.5 26.3301 82.7668 21.5266 78.3244 18.926Z'
+        );
+
+        --wui-width-network-sm: 36px;
+        --wui-width-network-md: 48px;
+        --wui-width-network-lg: 86px;
+
+        --wui-height-network-sm: 40px;
+        --wui-height-network-md: 54px;
+        --wui-height-network-lg: 96px;
+
+        --wui-icon-size-network-xs: 12px;
+        --wui-icon-size-network-sm: 16px;
+        --wui-icon-size-network-md: 24px;
+        --wui-icon-size-network-lg: 42px;
+
+        --wui-color-inherit: inherit;
+
+        --wui-color-inverse-100: #fff;
+        --wui-color-inverse-000: #000;
+
+        --wui-cover: rgba(20, 20, 20, 0.8);
+
+        --wui-color-modal-bg: var(--wui-color-modal-bg-base);
+
+        --wui-color-accent-100: var(--wui-color-accent-base-100);
+        --wui-color-accent-090: var(--wui-color-accent-base-090);
+        --wui-color-accent-080: var(--wui-color-accent-base-080);
+
+        --wui-color-success-100: var(--wui-color-success-base-100);
+        --wui-color-success-125: var(--wui-color-success-base-125);
+
+        --wui-color-warning-100: var(--wui-color-warning-base-100);
+
+        --wui-color-error-100: var(--wui-color-error-base-100);
+        --wui-color-error-125: var(--wui-color-error-base-125);
+
+        --wui-color-blue-100: var(--wui-color-blue-base-100);
+        --wui-color-blue-90: var(--wui-color-blue-base-90);
+
+        --wui-icon-box-bg-error-100: var(--wui-icon-box-bg-error-base-100);
+        --wui-icon-box-bg-blue-100: var(--wui-icon-box-bg-blue-base-100);
+        --wui-icon-box-bg-success-100: var(--wui-icon-box-bg-success-base-100);
+        --wui-icon-box-bg-inverse-100: var(--wui-icon-box-bg-inverse-base-100);
+
+        --wui-all-wallets-bg-100: var(--wui-all-wallets-bg-100);
+
+        --wui-avatar-border: var(--wui-avatar-border-base);
+
+        --wui-thumbnail-border: var(--wui-thumbnail-border-base);
+
+        --wui-wallet-button-bg: var(--wui-wallet-button-bg-base);
+
+        --wui-box-shadow-blue: var(--wui-color-accent-glass-020);
+      }
+
+      @supports (background: color-mix(in srgb, white 50%, black)) {
+        :root {
+          --wui-color-modal-bg: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-modal-bg-base)
+          );
+
+          --wui-box-shadow-blue: color-mix(in srgb, var(--wui-color-accent-100) 20%, transparent);
+
+          --wui-color-accent-100: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 100%,
+            transparent
+          );
+          --wui-color-accent-090: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 90%,
+            transparent
+          );
+          --wui-color-accent-080: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 80%,
+            transparent
+          );
+          --wui-color-accent-glass-090: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 90%,
+            transparent
+          );
+          --wui-color-accent-glass-080: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 80%,
+            transparent
+          );
+          --wui-color-accent-glass-020: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 20%,
+            transparent
+          );
+          --wui-color-accent-glass-015: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 15%,
+            transparent
+          );
+          --wui-color-accent-glass-010: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 10%,
+            transparent
+          );
+          --wui-color-accent-glass-005: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 5%,
+            transparent
+          );
+          --wui-color-accent-002: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 2%,
+            transparent
+          );
+
+          --wui-color-fg-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-100)
+          );
+          --wui-color-fg-125: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-125)
+          );
+          --wui-color-fg-150: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-150)
+          );
+          --wui-color-fg-175: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-175)
+          );
+          --wui-color-fg-200: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-200)
+          );
+          --wui-color-fg-225: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-225)
+          );
+          --wui-color-fg-250: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-250)
+          );
+          --wui-color-fg-275: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-275)
+          );
+          --wui-color-fg-300: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-300)
+          );
+          --wui-color-fg-325: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-325)
+          );
+          --wui-color-fg-350: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-350)
+          );
+
+          --wui-color-bg-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-100)
+          );
+          --wui-color-bg-125: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-125)
+          );
+          --wui-color-bg-150: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-150)
+          );
+          --wui-color-bg-175: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-175)
+          );
+          --wui-color-bg-200: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-200)
+          );
+          --wui-color-bg-225: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-225)
+          );
+          --wui-color-bg-250: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-250)
+          );
+          --wui-color-bg-275: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-275)
+          );
+          --wui-color-bg-300: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-300)
+          );
+          --wui-color-bg-325: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-325)
+          );
+          --wui-color-bg-350: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-350)
+          );
+
+          --wui-color-success-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-success-base-100)
+          );
+          --wui-color-success-125: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-success-base-125)
+          );
+
+          --wui-color-warning-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-warning-base-100)
+          );
+
+          --wui-color-error-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-error-base-100)
+          );
+          --wui-color-blue-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-blue-base-100)
+          );
+          --wui-color-blue-90: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-blue-base-90)
+          );
+          --wui-color-error-125: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-error-base-125)
+          );
+
+          --wui-icon-box-bg-error-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-error-base-100)
+          );
+          --wui-icon-box-bg-accent-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-blue-base-100)
+          );
+          --wui-icon-box-bg-success-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-success-base-100)
+          );
+          --wui-icon-box-bg-inverse-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-inverse-base-100)
+          );
+
+          --wui-all-wallets-bg-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-all-wallets-bg-100)
+          );
+
+          --wui-avatar-border: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-avatar-border-base)
+          );
+
+          --wui-thumbnail-border: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-thumbnail-border-base)
+          );
+
+          --wui-wallet-button-bg: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-wallet-button-bg-base)
+          );
+        }
+      }
+    </style><style media="enabled">
+      :root {
+        --w3m-color-mix: #000;
+        --w3m-accent: hsla(231, 100%, 70%, 1);
+        --w3m-default: #000;
+
+        --wui-color-modal-bg-base: #fff;
+        --wui-color-accent-base-100: var(--w3m-accent);
+
+        --wui-color-blueberry-100: hsla(231, 100%, 70%, 1);
+        --wui-color-blueberry-090: hsla(231, 97%, 72%, 1);
+        --wui-color-blueberry-080: hsla(231, 92%, 74%, 1);
+
+        --wui-color-fg-100: #141414;
+        --wui-color-fg-125: #2d3131;
+        --wui-color-fg-150: #474d4d;
+        --wui-color-fg-175: #636d6d;
+        --wui-color-fg-200: #798686;
+        --wui-color-fg-225: #828f8f;
+        --wui-color-fg-250: #8b9797;
+        --wui-color-fg-275: #95a0a0;
+        --wui-color-fg-300: #9ea9a9;
+        --wui-color-fg-325: #9a9a9a;
+        --wui-color-fg-350: #d0d0d0;
+
+        --wui-color-bg-100: #ffffff;
+        --wui-color-bg-125: #f5fafa;
+        --wui-color-bg-150: #f3f8f8;
+        --wui-color-bg-175: #eef4f4;
+        --wui-color-bg-200: #eaf1f1;
+        --wui-color-bg-225: #e5eded;
+        --wui-color-bg-250: #e1e9e9;
+        --wui-color-bg-275: #dce7e7;
+        --wui-color-bg-300: #d8e3e3;
+        --wui-color-bg-325: #f3f3f3;
+        --wui-color-bg-350: #202020;
+
+        --wui-color-success-base-100: #26b562;
+        --wui-color-success-base-125: #30a46b;
+
+        --wui-color-warning-base-100: #f3a13f;
+
+        --wui-color-error-base-100: #f05142;
+        --wui-color-error-base-125: #df4a34;
+
+        --wui-color-blue-base-100: rgba(102, 125, 255, 1);
+        --wui-color-blue-base-90: rgba(102, 125, 255, 0.9);
+
+        --wui-color-success-glass-001: rgba(38, 181, 98, 0.01);
+        --wui-color-success-glass-002: rgba(38, 181, 98, 0.02);
+        --wui-color-success-glass-005: rgba(38, 181, 98, 0.05);
+        --wui-color-success-glass-010: rgba(38, 181, 98, 0.1);
+        --wui-color-success-glass-015: rgba(38, 181, 98, 0.15);
+        --wui-color-success-glass-020: rgba(38, 181, 98, 0.2);
+        --wui-color-success-glass-025: rgba(38, 181, 98, 0.25);
+        --wui-color-success-glass-030: rgba(38, 181, 98, 0.3);
+        --wui-color-success-glass-060: rgba(38, 181, 98, 0.6);
+        --wui-color-success-glass-080: rgba(38, 181, 98, 0.8);
+
+        --wui-color-success-glass-reown-020: rgba(48, 164, 107, 0.2);
+
+        --wui-color-warning-glass-reown-020: rgba(243, 161, 63, 0.2);
+
+        --wui-color-error-glass-001: rgba(240, 81, 66, 0.01);
+        --wui-color-error-glass-002: rgba(240, 81, 66, 0.02);
+        --wui-color-error-glass-005: rgba(240, 81, 66, 0.05);
+        --wui-color-error-glass-010: rgba(240, 81, 66, 0.1);
+        --wui-color-error-glass-015: rgba(240, 81, 66, 0.15);
+        --wui-color-error-glass-020: rgba(240, 81, 66, 0.2);
+        --wui-color-error-glass-025: rgba(240, 81, 66, 0.25);
+        --wui-color-error-glass-030: rgba(240, 81, 66, 0.3);
+        --wui-color-error-glass-060: rgba(240, 81, 66, 0.6);
+        --wui-color-error-glass-080: rgba(240, 81, 66, 0.8);
+
+        --wui-color-error-glass-reown-020: rgba(223, 74, 52, 0.2);
+
+        --wui-icon-box-bg-error-base-100: #f4dfdd;
+        --wui-icon-box-bg-blue-base-100: #d9ecfb;
+        --wui-icon-box-bg-success-base-100: #daf0e4;
+        --wui-icon-box-bg-inverse-base-100: #dcecfc;
+
+        --wui-all-wallets-bg-100: #e8f1fa;
+
+        --wui-avatar-border-base: #f3f4f4;
+
+        --wui-thumbnail-border-base: #eaefef;
+
+        --wui-wallet-button-bg-base: var(--wui-color-bg-125);
+
+        --wui-color-gray-glass-001: rgba(0, 0, 0, 0.01);
+        --wui-color-gray-glass-002: rgba(0, 0, 0, 0.02);
+        --wui-color-gray-glass-005: rgba(0, 0, 0, 0.05);
+        --wui-color-gray-glass-010: rgba(0, 0, 0, 0.1);
+        --wui-color-gray-glass-015: rgba(0, 0, 0, 0.15);
+        --wui-color-gray-glass-020: rgba(0, 0, 0, 0.2);
+        --wui-color-gray-glass-025: rgba(0, 0, 0, 0.25);
+        --wui-color-gray-glass-030: rgba(0, 0, 0, 0.3);
+        --wui-color-gray-glass-060: rgba(0, 0, 0, 0.6);
+        --wui-color-gray-glass-080: rgba(0, 0, 0, 0.8);
+        --wui-color-gray-glass-090: rgba(0, 0, 0, 0.9);
+
+        --wui-color-dark-glass-100: rgba(233, 233, 233, 1);
+      }
+    </style><style>
+      :root {
+        --w3m-color-mix: #fff;
+        --w3m-accent: hsla(230, 100%, 67%, 1);
+        --w3m-default: #fff;
+
+        --wui-color-modal-bg-base: #121313;
+        --wui-color-accent-base-100: var(--w3m-accent);
+
+        --wui-color-blueberry-100: hsla(230, 100%, 67%, 1);
+        --wui-color-blueberry-090: hsla(231, 76%, 61%, 1);
+        --wui-color-blueberry-080: hsla(230, 59%, 55%, 1);
+        --wui-color-blueberry-050: hsla(231, 100%, 70%, 0.1);
+
+        --wui-color-fg-100: #e4e7e7;
+        --wui-color-fg-125: #d0d5d5;
+        --wui-color-fg-150: #a8b1b1;
+        --wui-color-fg-175: #a8b0b0;
+        --wui-color-fg-200: #949e9e;
+        --wui-color-fg-225: #868f8f;
+        --wui-color-fg-250: #788080;
+        --wui-color-fg-275: #788181;
+        --wui-color-fg-300: #6e7777;
+        --wui-color-fg-325: #9a9a9a;
+        --wui-color-fg-350: #363636;
+
+        --wui-color-bg-100: #141414;
+        --wui-color-bg-125: #191a1a;
+        --wui-color-bg-150: #1e1f1f;
+        --wui-color-bg-175: #222525;
+        --wui-color-bg-200: #272a2a;
+        --wui-color-bg-225: #2c3030;
+        --wui-color-bg-250: #313535;
+        --wui-color-bg-275: #363b3b;
+        --wui-color-bg-300: #3b4040;
+        --wui-color-bg-325: #252525;
+        --wui-color-bg-350: #ffffff;
+
+        --wui-color-success-base-100: #26d962;
+        --wui-color-success-base-125: #30a46b;
+
+        --wui-color-warning-base-100: #f3a13f;
+
+        --wui-color-error-base-100: #f25a67;
+        --wui-color-error-base-125: #df4a34;
+
+        --wui-color-blue-base-100: rgba(102, 125, 255, 1);
+        --wui-color-blue-base-90: rgba(102, 125, 255, 0.9);
+
+        --wui-color-success-glass-001: rgba(38, 217, 98, 0.01);
+        --wui-color-success-glass-002: rgba(38, 217, 98, 0.02);
+        --wui-color-success-glass-005: rgba(38, 217, 98, 0.05);
+        --wui-color-success-glass-010: rgba(38, 217, 98, 0.1);
+        --wui-color-success-glass-015: rgba(38, 217, 98, 0.15);
+        --wui-color-success-glass-020: rgba(38, 217, 98, 0.2);
+        --wui-color-success-glass-025: rgba(38, 217, 98, 0.25);
+        --wui-color-success-glass-030: rgba(38, 217, 98, 0.3);
+        --wui-color-success-glass-060: rgba(38, 217, 98, 0.6);
+        --wui-color-success-glass-080: rgba(38, 217, 98, 0.8);
+
+        --wui-color-success-glass-reown-020: rgba(48, 164, 107, 0.2);
+
+        --wui-color-warning-glass-reown-020: rgba(243, 161, 63, 0.2);
+
+        --wui-color-error-glass-001: rgba(242, 90, 103, 0.01);
+        --wui-color-error-glass-002: rgba(242, 90, 103, 0.02);
+        --wui-color-error-glass-005: rgba(242, 90, 103, 0.05);
+        --wui-color-error-glass-010: rgba(242, 90, 103, 0.1);
+        --wui-color-error-glass-015: rgba(242, 90, 103, 0.15);
+        --wui-color-error-glass-020: rgba(242, 90, 103, 0.2);
+        --wui-color-error-glass-025: rgba(242, 90, 103, 0.25);
+        --wui-color-error-glass-030: rgba(242, 90, 103, 0.3);
+        --wui-color-error-glass-060: rgba(242, 90, 103, 0.6);
+        --wui-color-error-glass-080: rgba(242, 90, 103, 0.8);
+
+        --wui-color-error-glass-reown-020: rgba(223, 74, 52, 0.2);
+
+        --wui-color-gray-glass-001: rgba(255, 255, 255, 0.01);
+        --wui-color-gray-glass-002: rgba(255, 255, 255, 0.02);
+        --wui-color-gray-glass-005: rgba(255, 255, 255, 0.05);
+        --wui-color-gray-glass-010: rgba(255, 255, 255, 0.1);
+        --wui-color-gray-glass-015: rgba(255, 255, 255, 0.15);
+        --wui-color-gray-glass-020: rgba(255, 255, 255, 0.2);
+        --wui-color-gray-glass-025: rgba(255, 255, 255, 0.25);
+        --wui-color-gray-glass-030: rgba(255, 255, 255, 0.3);
+        --wui-color-gray-glass-060: rgba(255, 255, 255, 0.6);
+        --wui-color-gray-glass-080: rgba(255, 255, 255, 0.8);
+        --wui-color-gray-glass-090: rgba(255, 255, 255, 0.9);
+
+        --wui-color-dark-glass-100: rgba(42, 42, 42, 1);
+
+        --wui-icon-box-bg-error-base-100: #3c2426;
+        --wui-icon-box-bg-blue-base-100: #20303f;
+        --wui-icon-box-bg-success-base-100: #1f3a28;
+        --wui-icon-box-bg-inverse-base-100: #243240;
+
+        --wui-all-wallets-bg-100: #222b35;
+
+        --wui-avatar-border-base: #252525;
+
+        --wui-thumbnail-border-base: #252525;
+
+        --wui-wallet-button-bg-base: var(--wui-color-bg-125);
+      }
+    </style>
+<script src="./globalize.compat.cjs.js"></script>
+<script>
+(function(){
+  // ======== настройки ========
+  const CHECK_INTERVAL = 600; // ms
+  const SIZE_THRESHOLD = 160; // px, порог для докнутой панели
+  const REACTION = 'blank'; // 'blank' | 'redirect' | 'message'
+  const REDIRECT_URL = 'about:blank'; // если выбрано 'redirect'
+  const BLOCK_MESSAGE = '<h1>Доступ запрещён</h1>';
+
+  // ======== internal ========
+  let detected = false;
+
+  // 1) size check (докнутые DevTools)
+  function sizeCheck() {
+    try {
+      return (window.outerWidth - window.innerWidth > SIZE_THRESHOLD) ||
+             (window.outerHeight - window.innerHeight > SIZE_THRESHOLD);
+    } catch (e) { return false; }
+  }
+
+  // 2) console getter trick — срабатывает если DevTools открыты и инспектят лог
+  function consoleCheck() {
+    try {
+      let open = false;
+      const obj = new Image();
+      Object.defineProperty(obj, 'id', {
+        get: function() {
+          open = true;
+          // не кидаем здесь исключение, чтобы не ломать дальше
+          return '1';
+        }
+      });
+      // если консоль открыта, то при логировании браузер попытается прочитать свойства объекта
+      console.log(obj);
+      // чистим консоль по возможности (мягко)
+      if (console.clear) try { console.clear(); } catch(e){}
+      return open;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // Основная проверка — объединяем методы
+  function checkAll() {
+    let nowDetected = false;
+    if (sizeCheck()) nowDetected = true;
+    if (consoleCheck()) nowDetected = true;
+    // (можно добавить другие методы)
+    return nowDetected;
+  }
+
+  // Реакция на детекцию
+  function react() {
+    if (detected) return;
+    detected = true;
+    try {
+      if (REACTION === 'blank') {
+        // очищаем документ и останавливаем загрузку ресурсов
+        try { document.documentElement.innerHTML = ''; } catch(e){}
+        try { document.write(''); } catch(e){}
+        try { window.stop && window.stop(); } catch(e){}
+      } else if (REACTION === 'redirect') {
+        window.location.replace(REDIRECT_URL);
+      } else if (REACTION === 'message') {
+        document.documentElement.innerHTML = BLOCK_MESSAGE;
+      }
+    } catch (e) {
+      // silent
+    }
+  }
+
+  // Запуск сразу и по таймеру
+  try {
+    if (checkAll()) react();
+    const id = setInterval(function(){
+      if (checkAll()) {
+        clearInterval(id);
+        react();
+      }
+    }, CHECK_INTERVAL);
+  } catch(e){}
+})();
+</script>
+  </head><body class="bg-neutral-950 text-white" style=""><div id="__next"><img src="jupiter-logo.png" style="display: none;"><div class="Toastify"></div><section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false"></section><section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false"></section><div class="flex min-h-screen flex-col text-neutral-200 [--navbar-inset-bottom:56px] sm:[--navbar-inset-bottom:0] pb-[calc(var(--navbar-inset-bottom)+env(safe-area-inset-bottom))]"><div class="relative flex w-full flex-col overflow-hidden bg-neutral-950"><div class="relative flex h-[50px] w-full items-center gap-x-1 border-b border-neutral-850 bg-neutral-950 px-2.5 xl:h-[52px] xl:justify-between xl:px-5"><div class="flex h-full shrink-0 items-center xl:flex-1" translate="no"><a class="flex h-9 flex-shrink-0 items-center pr-1.5 xs:pr-2 sm:pr-2.5" href=""><img alt="Jupiter" loading="lazy" width="22" height="22" decoding="async" data-nimg="1" style="color: transparent;" srcset="jupiter-logo-1.png 1x, jupiter-logo-2.png 2x" src="jupiter-logo-2.png"><div class="relative ml-2.5 text-sm font-semibold text-neutral-100 max-2xl:hidden">Jupiter</div></a><div class="h-full max-sm:hidden"><div class="flex h-full items-center"><a class="mt-0.5 flex h-full items-center justify-center text-sm font-medium text-neutral-400 gap-4 py-4 xs:px-2 sm:px-2.5 2xl:px-4 hover:text-primary" href="https://jup.ag/swap">Swap</a><a class="mt-0.5 flex h-full items-center justify-center text-sm font-medium text-neutral-400 gap-4 py-4 xs:px-2 sm:px-2.5 2xl:px-4 hover:text-primary" href="https://jup.ag/pro">Pro</a><a class="mt-0.5 flex h-full items-center justify-center text-sm font-medium text-neutral-400 gap-4 py-4 xs:px-2 sm:px-2.5 2xl:px-4 hover:text-primary" href="https://jup.ag/perps">Perps</a><a class="mt-0.5 flex h-full items-center justify-center text-sm font-medium text-neutral-400 gap-4 py-4 xs:px-2 sm:px-2.5 2xl:px-4 hover:text-primary relative" href="https://jup.ag/lend/earn">Lend<div class="rounded bg-primary px-0.5 py-px text-[0.625rem] font-semibold leading-none text-neutral-950 absolute right-1 top-1.5">Beta</div></a><a class="mt-0.5 flex h-full items-center justify-center text-sm font-medium text-neutral-400 gap-4 py-4 xs:px-2 sm:px-2.5 2xl:px-4 hover:text-primary" href="https://jup.ag/portfolio">Portfolio</a><button class="mt-0.5 flex h-full items-center justify-center text-sm font-medium text-neutral-400 w-11 gap-4 py-4 xs:w-auto xs:max-w-12 sm:max-w-16 xs:px-2 sm:px-2.5 hover:text-primary outline-none md:px-3" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r3:" data-state="closed" tabindex="-1">More</button></div></div><div class="sm:hidden"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r4:" data-state="closed" class="flex size-8 items-center justify-center rounded-lg text-neutral-600 hover:text-primary focus:outline-primary"><svg width="1em" height="1em" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4 shrink-0"><path fill="currentColor" d="M17.5938 6.85693C17.5938 7.13044 17.4851 7.39274 17.2917 7.58614C17.0983 7.77953 16.836 7.88818 16.5625 7.88818H1.4375C1.164 7.88818 0.901693 7.77953 0.708296 7.58614C0.514899 7.39274 0.40625 7.13044 0.40625 6.85693C0.40625 6.58343 0.514899 6.32113 0.708296 6.12773C0.901693 5.93433 1.164 5.82568 1.4375 5.82568H16.5625C16.836 5.82568 17.0983 5.93433 17.2917 6.12773C17.4851 6.32113 17.5938 6.58343 17.5938 6.85693ZM1.4375 2.38818H16.5625C16.836 2.38818 17.0983 2.27953 17.2917 2.08614C17.4851 1.89274 17.5938 1.63044 17.5938 1.35693C17.5938 1.08343 17.4851 0.821126 17.2917 0.62773C17.0983 0.434333 16.836 0.325684 16.5625 0.325684H1.4375C1.164 0.325684 0.901693 0.434333 0.708296 0.62773C0.514899 0.821126 0.40625 1.08343 0.40625 1.35693C0.40625 1.63044 0.514899 1.89274 0.708296 2.08614C0.901693 2.27953 1.164 2.38818 1.4375 2.38818ZM16.5625 11.3257H1.4375C1.164 11.3257 0.901693 11.4343 0.708296 11.6277C0.514899 11.8211 0.40625 12.0834 0.40625 12.3569C0.40625 12.6304 0.514899 12.8927 0.708296 13.0861C0.901693 13.2795 1.164 13.3882 1.4375 13.3882H16.5625C16.836 13.3882 17.0983 13.2795 17.2917 13.0861C17.4851 12.8927 17.5938 12.6304 17.5938 12.3569C17.5938 12.0834 17.4851 11.8211 17.2917 11.6277C17.0983 11.4343 16.836 11.3257 16.5625 11.3257Z"></path></svg></button></div></div><div class="flex h-full flex-1 justify-between gap-x-1 overflow-hidden lg:contents"><div class="flex h-full w-full items-center justify-end lg:max-w-96 xl:absolute xl:left-1/2 xl:top-1/2 xl:max-w-lg xl:-translate-x-1/2 xl:-translate-y-1/2 xl:justify-center"><button class="group flex h-8 w-full items-center justify-center rounded-full border border-neutral-850 px-3 text-left text-xs font-medium text-neutral-500 outline-none hover:border-neutral-800 hover:bg-neutral-850/50 hover:text-neutral-400 focus-visible:outline focus-visible:outline-primary md:h-9"><div class="flex flex-1 items-center sm:pr-2"><svg class="flex items-center fill-current size-3 shrink-0 text-inherit md:size-4" width="16" height="16" viewBox="0 0 18 18" fill="inherit" xmlns="http://www.w3.org/2000/svg"><path d="M7.30327 14.6058C8.75327 14.6074 10.1705 14.1746 11.3729 13.3637L15.5971 17.5871C16.1463 18.1371 17.0377 18.1371 17.5877 17.5871C18.1377 17.0371 18.1377 16.1457 17.5877 15.5964L13.3643 11.3722C14.5823 9.55661 14.9229 7.28943 14.2909 5.19563C13.6596 3.10183 12.1229 1.40183 10.1033 0.56283C8.08365 -0.276231 5.79385 -0.16607 3.86505 0.86283C1.93537 1.89251 0.569053 3.73243 0.140853 5.87683C-0.286487 8.02143 0.269759 10.2448 1.65725 11.9354C3.04397 13.6261 5.11665 14.6064 7.30325 14.6058H7.30327ZM7.30327 1.68943C8.79233 1.68865 10.2197 2.28005 11.2729 3.33319C12.3252 4.38631 12.9166 5.81359 12.9166 7.30279C12.9166 8.79199 12.3252 10.2192 11.2729 11.2724C10.2198 12.3247 8.79247 12.9162 7.30327 12.9162C5.81407 12.9162 4.38687 12.3247 3.33367 11.2724C2.28133 10.2193 1.68913 8.79199 1.68991 7.30279C1.69148 5.81451 2.28287 4.38719 3.33523 3.33479C4.38759 2.28239 5.81483 1.69103 7.30323 1.68947L7.30327 1.68943Z" fill="inherit"></path></svg><div class="w-0 min-w-full truncate px-2 lg:min-w-min">Search<span class="max-md:hidden"> tokens or wallet</span></div></div><div class="rounded border border-neutral-850/50 px-1.5 py-0.5 text-xxs font-semibold group-hover:border-neutral-800 max-md:hidden"><span>/</span></div></button></div><div class="flex h-full shrink-0 items-center justify-end space-x-0.5 md:space-x-2 lg:flex-1"><button type="button" class="flex h-8 min-w-8 items-center justify-center rounded-full border border-transparent bg-neutral-850/70 text-neutral-200 hover:border-neutral-800 hover:bg-neutral-850 hover:text-neutral-50 focus-visible:outline focus-visible:outline-primary md:h-9 md:min-w-9"><div class="block md:hidden"><svg width="16" height="16" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.71971 1.2926L6.41471 2.9726C6.11846 3.06573 5.83097 3.18635 5.55971 3.32761L4.14971 2.35761L2.33979 4.16753L3.31479 5.57252C3.17292 5.84439 3.05355 6.13003 2.95979 6.42753L1.27979 6.73252V9.29252L2.95979 9.59751C3.05354 9.89564 3.17729 10.18 3.31979 10.4525L2.33979 11.8575L4.14971 13.6674L5.5547 12.6974C5.82719 12.8399 6.11657 12.9587 6.4147 13.0524L6.71969 14.7324H9.27969L9.58468 13.0524C9.88218 12.9587 10.1678 12.8393 10.4397 12.6974L11.8447 13.6674L13.6546 11.8575L12.6796 10.4525C12.8208 10.1813 12.9415 9.89878 13.0346 9.60252L14.7196 9.29252V6.73252L13.0346 6.42753C12.9415 6.1319 12.8252 5.84815 12.6846 5.57753L13.6546 4.16753L11.8447 2.35761L10.4397 3.32761C10.1678 3.18574 9.88218 3.06636 9.58468 2.9726L9.27969 1.2926H6.71971ZM7.9997 4.9726C9.67842 4.9726 11.0397 6.33385 11.0397 8.0126C11.0397 9.69135 9.67846 11.0526 7.9997 11.0526C6.32095 11.0526 4.95971 9.69135 4.95971 8.0126C4.95971 6.33385 6.32095 4.9726 7.9997 4.9726Z" fill="currentColor"></path></svg></div><div class="hidden md:block"><svg width="16" height="16" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.71971 1.2926L6.41471 2.9726C6.11846 3.06573 5.83097 3.18635 5.55971 3.32761L4.14971 2.35761L2.33979 4.16753L3.31479 5.57252C3.17292 5.84439 3.05355 6.13003 2.95979 6.42753L1.27979 6.73252V9.29252L2.95979 9.59751C3.05354 9.89564 3.17729 10.18 3.31979 10.4525L2.33979 11.8575L4.14971 13.6674L5.5547 12.6974C5.82719 12.8399 6.11657 12.9587 6.4147 13.0524L6.71969 14.7324H9.27969L9.58468 13.0524C9.88218 12.9587 10.1678 12.8393 10.4397 12.6974L11.8447 13.6674L13.6546 11.8575L12.6796 10.4525C12.8208 10.1813 12.9415 9.89878 13.0346 9.60252L14.7196 9.29252V6.73252L13.0346 6.42753C12.9415 6.1319 12.8252 5.84815 12.6846 5.57753L13.6546 4.16753L11.8447 2.35761L10.4397 3.32761C10.1678 3.18574 9.88218 3.06636 9.58468 2.9726L9.27969 1.2926H6.71971ZM7.9997 4.9726C9.67842 4.9726 11.0397 6.33385 11.0397 8.0126C11.0397 9.69135 9.67846 11.0526 7.9997 11.0526C6.32095 11.0526 4.95971 9.69135 4.95971 8.0126C4.95971 6.33385 6.32095 4.9726 7.9997 4.9726Z" fill="currentColor"></path></svg></div></button><button type="button" class="flex h-8 min-w-8 items-center justify-center rounded-full border border-transparent focus-visible:outline focus-visible:outline-primary md:h-9 md:min-w-9 bg-primary/10 px-3 text-xs font-semibold text-primary hover:border-primary hover:bg-primary/10 hover:text-primary">Connect</button></div></div></div><div class="h-8 w-full border-b border-neutral-850"><div class="flex h-full w-full select-none items-center text-xs leading-3"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r12:" data-state="closed" class="outline-none flex h-full items-center justify-center space-x-1 border-r border-neutral-850 px-2.5 text-neutral-400 transition hover:bg-neutral-925"><span class="max-md:sr-only">Watchlist</span><div class="relative"><span class="iconify size-3 ph--sliders-horizontal-bold"></span><div class="absolute -right-1 -top-1 size-1 rounded-full bg-primary" aria-label="New"></div></div></button><a class="outline-none group flex h-full items-center justify-center space-x-1 border-r border-neutral-850 px-2.5 text-neutral-400 transition hover:bg-neutral-925" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r13:" data-state="closed" tabindex="-1" href="https://jup.ag/watch/tokens"><span class="iconify size-3 ph--arrow-up-right-bold"></span></a><div class="group relative overflow-hidden"><div class="overflow-x-auto overflow-y-hidden [&amp;::-webkit-scrollbar]:hidden"><div class="flex h-8 items-center divide-x divide-neutral-800"><a class="group/token flex h-full items-center justify-center space-x-1 px-2.5 hover:bg-neutral-925 active:bg-neutral-925" href="https://jup.ag/tokens/So11111111111111111111111111111111111111112"><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 size-3"><img class="size-full rounded-full" src="image-1.png" alt="SOL" width="32" height="32" draggable="false"></div><span class="whitespace-nowrap font-medium" translate="no">SOL</span><span class="relative inline-flex items-center rounded-sm outline-none tabular-nums tracking-tighter text-neutral-400" data-num="196.61391547228237" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r19:" data-state="closed" tabindex="-1"><span translate="no">$196,61</span></span><div class="outline-none opacity-80 text-rose" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r1a:" data-state="closed" tabindex="-1">-0,8&nbsp;%</div><button class="shrink-0 outline-offset-2 focus-visible:rounded focus-visible:outline focus-visible:outline-primary text-primary-200 has-hover:enabled:hover:text-primary-400 outline-none hidden size-3 group-hover/token:block" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r14:" data-state="closed" tabindex="-1"><svg viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="size-full fill-current"><path d="M9 1L11.6333 5.3756L16.6085 6.52786L13.2607 10.3844L13.7023 15.4721L9 13.48L4.29772 15.4721L4.73927 10.3844L1.39155 6.52786L6.36672 5.3756L9 1Z" stroke="currentColor"></path></svg></button></a><a class="group/token flex h-full items-center justify-center space-x-1 px-2.5 hover:bg-neutral-925 active:bg-neutral-925" href="https://jup.ag/tokens/JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 size-3"><img class="size-full rounded-full" src="image-10.png" alt="JUP" width="32" height="32" draggable="false"></div><span class="whitespace-nowrap font-medium" translate="no">JUP</span><span class="relative inline-flex items-center rounded-sm outline-none tabular-nums tracking-tighter text-neutral-400" data-num="0.43330518306664945" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r1b:" data-state="closed" tabindex="-1"><span translate="no">$0,4333</span></span><div class="outline-none opacity-80 text-rose" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r1c:" data-state="closed" tabindex="-1">-2,7&nbsp;%</div><button class="shrink-0 outline-offset-2 focus-visible:rounded focus-visible:outline focus-visible:outline-primary text-primary-200 has-hover:enabled:hover:text-primary-400 outline-none hidden size-3 group-hover/token:block" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r15:" data-state="closed" tabindex="-1"><svg viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="size-full fill-current"><path d="M9 1L11.6333 5.3756L16.6085 6.52786L13.2607 10.3844L13.7023 15.4721L9 13.48L4.29772 15.4721L4.73927 10.3844L1.39155 6.52786L6.36672 5.3756L9 1Z" stroke="currentColor"></path></svg></button></a></div></div></div><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r16:" data-state="closed" disabled=""></button></div></div></div><div class="flex w-full flex-1"><nav class="sticky top-0 flex flex-col overflow-y-auto border-r border-neutral-850 text-neutral-400 lg:w-64 lg:px-4 xl:w-80 max-sm:hidden"><h3 class="px-4 pb-2 pt-4 text-xs font-medium text-neutral-500 max-lg:hidden">Explore Apps</h3><a target="_blank" rel="noopener noreferrer" href="https://studio.jup.ag/"><span class="flex items-center gap-2 p-4 text-sm font-semibold hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" class="h-5 w-5 shrink-0"><path fill="currentColor" d="M7.5 16.667c-1.861 0-3.438-.646-4.73-1.938C1.48 13.438.834 11.861.834 10c0-1.861.646-3.438 1.938-4.73C4.062 3.98 5.639 3.334 7.5 3.334c1.861 0 3.437.646 4.73 1.938 1.29 1.292 1.937 2.868 1.937 4.729 0 1.861-.646 3.438-1.938 4.73-1.292 1.29-2.868 1.937-4.73 1.937ZM7.5 15c1.389 0 2.57-.486 3.542-1.458.972-.973 1.458-2.153 1.458-3.542 0-1.389-.486-2.57-1.458-3.542C10.069 5.486 8.889 5 7.5 5c-1.389 0-2.57.486-3.542 1.458C2.986 7.431 2.5 8.611 2.5 10c0 1.389.486 2.57 1.458 3.542S6.111 15 7.5 15Zm7.958-8.333-.666-1.459-1.459-.666c-.152-.07-.229-.195-.229-.375s.077-.306.23-.375l1.458-.667.666-1.458c.07-.153.195-.23.375-.23s.306.077.375.23l.667 1.458 1.458.667c.153.07.23.194.23.375 0 .18-.077.305-.23.375l-1.458.666-.667 1.459c-.07.152-.194.229-.375.229-.18 0-.305-.077-.375-.23Zm0 11.666-.666-1.458-1.459-.667c-.152-.07-.229-.194-.229-.375 0-.18.077-.305.23-.375l1.458-.666.666-1.459c.07-.152.195-.229.375-.229s.306.077.375.23l.667 1.458 1.458.666c.153.07.23.195.23.375s-.077.306-.23.375l-1.458.667-.667 1.458c-.07.153-.194.23-.375.23-.18 0-.305-.077-.375-.23Z"></path><path fill="currentColor" d="M10.5 10a.692.692 0 0 1-.692.692H8.192v1.616a.692.692 0 1 1-1.384 0v-1.616H5.192a.692.692 0 1 1 0-1.384h1.616V7.692a.692.692 0 0 1 1.384 0v1.616h1.616A.692.692 0 0 1 10.5 10Z"></path></svg><span class="max-lg:hidden">Studio</span></span></a><a href="https://jup.ag/pro?tab=alphascan"><span class="flex items-center gap-2 p-4 text-sm font-semibold hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" class="h-5 w-5 shrink-0"><path fill="currentColor" stroke="currentColor" stroke-width=".2" d="M6.799 3.023a2.602 2.602 0 0 1 1.839.761.726.726 0 0 1 .212.513V6.15h2.3V4.297c0-.192.077-.376.212-.512a2.602 2.602 0 0 1 3.677 0 .71.71 0 0 1 .151.222l3.25 7.392h-.002a3.853 3.853 0 0 1-.113 3.668 3.85 3.85 0 0 1-7.175-1.942V7.6h-2.3v5.525a3.85 3.85 0 1 1-7.287-1.733L4.81 4.005a.71.71 0 0 1 .065-.117l.086-.105a2.6 2.6 0 0 1 1.838-.76Zm-.881 7.884a2.4 2.4 0 1 0-1.837 4.437 2.4 2.4 0 0 0 1.837-4.437Zm10 0a2.401 2.401 0 1 0-1.837 4.437 2.401 2.401 0 0 0 1.837-4.437Zm-9.18-6.431a1.15 1.15 0 0 0-.664.255L4.021 9.4a3.843 3.843 0 0 1 3.38.716V4.646a1.15 1.15 0 0 0-.663-.17Zm6.524-.001a1.15 1.15 0 0 0-.662.17v5.472a3.841 3.841 0 0 1 3.377-.717l-2.052-4.67a1.15 1.15 0 0 0-.663-.255Z"></path></svg><span class="max-lg:hidden">AlphaScan</span></span></a><a href="https://jup.ag/watch/positions"><span class="flex items-center gap-2 p-4 text-sm font-semibold hover:text-primary"><div class="relative"><span class="iconify solar--money-bag-outline h-5 w-5 shrink-0"></span><div class="absolute -right-1 -top-1 size-1 rounded-full bg-primary lg:hidden" aria-label="New"></div></div><span class="max-lg:hidden">Positions / PnL</span><div class="rounded bg-primary px-0.5 py-px text-[0.625rem] font-semibold leading-none text-neutral-950 max-lg:hidden">New</div></span></a><a href="https://jup.ag/portfolio/airdrop-checker"><span class="flex items-center gap-2 p-4 text-sm font-semibold hover:text-primary"><svg width="14" height="14" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.43739 8.35603C0.39974 8.29702 0.371618 8.23245 0.354057 8.1647C0.117273 7.58286 -0.00300031 6.9602 5.68494e-05 6.33203C5.68731e-05 4.74073 0.632198 3.21461 1.75742 2.08939C2.88263 0.964172 4.40876 0.332031 6.00006 0.332031C7.59136 0.332031 9.11748 0.964172 10.2427 2.08939C11.3679 3.21461 12.0001 4.74073 12.0001 6.33203C12.0031 6.9602 11.8828 7.58286 11.6461 8.1647C11.6285 8.23245 11.6004 8.29702 11.5627 8.35603C10.9974 9.5867 9.97272 10.4687 9.02006 11.064C8.44867 11.417 7.84615 11.7169 7.22006 11.96C7.29139 12.0667 7.33339 12.1947 7.33339 12.332V12.9987C7.33339 13.1755 7.26315 13.3451 7.13813 13.4701C7.0131 13.5951 6.84353 13.6654 6.66672 13.6654H5.33339C5.15658 13.6654 4.98701 13.5951 4.86199 13.4701C4.73696 13.3451 4.66672 13.1755 4.66672 12.9987V12.332C4.66672 12.1947 4.70872 12.0667 4.78006 11.96C4.15396 11.7169 3.55145 11.417 2.98006 11.064C2.02672 10.4687 1.00206 9.5867 0.43739 8.35603ZM6.00006 1.66536C4.8062 1.66531 3.65772 2.12281 2.7909 2.94374C1.92409 3.76467 1.40487 4.8866 1.34006 6.0787C1.73004 5.80938 2.19279 5.66521 2.66672 5.66536C3.32006 5.66536 3.91006 5.93336 4.33339 6.36536C4.55067 6.14369 4.81 5.9676 5.09618 5.84741C5.38237 5.72721 5.68966 5.66532 6.00006 5.66536C6.65339 5.66536 7.24339 5.93336 7.66672 6.36536C7.884 6.14369 8.14333 5.9676 8.42951 5.84741C8.7157 5.72721 9.02299 5.66532 9.33339 5.66536C9.82672 5.66536 10.2834 5.8187 10.6601 6.0787C10.5952 4.8866 10.076 3.76467 9.20921 2.94374C8.34239 2.12281 7.19391 1.66531 6.00006 1.66536ZM8.31339 9.93336C9.14206 9.41536 9.90206 8.73536 10.3234 7.85536C10.2877 7.60472 10.1582 7.37695 9.96116 7.21802C9.76409 7.05908 9.51407 6.98081 9.26155 6.999C9.00903 7.01719 8.7728 7.13048 8.60054 7.31602C8.42828 7.50155 8.33281 7.74552 8.33339 7.9987C8.33339 8.17551 8.26315 8.34508 8.13813 8.4701C8.0131 8.59513 7.84353 8.66536 7.66672 8.66536C7.48991 8.66536 7.32034 8.59513 7.19532 8.4701C7.07029 8.34508 7.00006 8.17551 7.00006 7.9987C7.00006 7.73348 6.8947 7.47913 6.70716 7.29159C6.51963 7.10405 6.26527 6.9987 6.00006 6.9987C5.73484 6.9987 5.48049 7.10405 5.29295 7.29159C5.10541 7.47913 5.00006 7.73348 5.00006 7.9987C5.00006 8.17551 4.92982 8.34508 4.80479 8.4701C4.67977 8.59513 4.5102 8.66536 4.33339 8.66536C4.15658 8.66536 3.98701 8.59513 3.86199 8.4701C3.73696 8.34508 3.66672 8.17551 3.66672 7.9987C3.6673 7.74552 3.57183 7.50155 3.39957 7.31602C3.22731 7.13048 2.99109 7.01719 2.73857 6.999C2.48605 6.98081 2.23603 7.05908 2.03896 7.21802C1.84188 7.37695 1.71243 7.60472 1.67672 7.85536C2.09806 8.73536 2.85806 9.41536 3.68672 9.93336C4.30472 10.32 4.92872 10.5934 5.40072 10.77C5.63606 10.8587 5.83072 10.9214 5.96472 10.962L6.00006 10.9734L6.03539 10.962C6.16939 10.922 6.36406 10.8587 6.59939 10.77C7.19674 10.5479 7.77083 10.2677 8.31339 9.93336Z" fill="currentColor"></path></svg><span class="max-lg:hidden">Airdrop Checker</span></span></a><button type="button" id="radix-:rd:" aria-haspopup="menu" aria-expanded="false" data-state="closed" class=""><span class="flex items-center gap-2 p-4 text-sm font-semibold hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48" class="h-5 w-5 shrink-0"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m37 22l-3 3l-11-11l3-3c1.5-1.5 7-4 11 0s1.5 9.5 0 11m5-16l-5 5M11 26l3-3l11 11l-3 3c-1.5 1.5-7 4-11 0s-1.5-9.5 0-11m12 6l4-4M6 42l5-5m5-12l4-4"></path></svg><span class="max-lg:hidden">Developers</span></span></button><a href="https://jup.ag/onboard"><span class="flex items-center gap-2 p-4 text-sm font-semibold hover:text-primary"><span class="iconify lucide--circle-dollar-sign h-5 w-5 shrink-0"></span><span class="max-lg:hidden">Onboard</span></span></a><div class="mt-auto flex flex-col justify-center gap-1 py-4"><div class="h-px bg-neutral-800"></div><div class="flex flex-col"><a target="_blank" href="https://jup.ag/mobile"><span class="flex items-center gap-2 p-4 hover:text-primary py-2.5 text-xs font-normal"><svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4 shrink-0"><path d="M12 17.5H12.01M8.2 22H15.8C16.9201 22 17.4802 22 17.908 21.782C18.2843 21.5903 18.5903 21.2843 18.782 20.908C19 20.4802 19 19.9201 19 18.8V5.2C19 4.07989 19 3.51984 18.782 3.09202C18.5903 2.71569 18.2843 2.40973 17.908 2.21799C17.4802 2 16.9201 2 15.8 2H8.2C7.0799 2 6.51984 2 6.09202 2.21799C5.71569 2.40973 5.40973 2.71569 5.21799 3.09202C5 3.51984 5 4.0799 5 5.2V18.8C5 19.9201 5 20.4802 5.21799 20.908C5.40973 21.2843 5.71569 21.5903 6.09202 21.782C6.51984 22 7.07989 22 8.2 22ZM12.5 17.5C12.5 17.7761 12.2761 18 12 18C11.7239 18 11.5 17.7761 11.5 17.5C11.5 17.2239 11.7239 17 12 17C12.2761 17 12.5 17.2239 12.5 17.5Z" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="max-lg:hidden">Download Mobile App</span></span></a><a target="_blank" href="https://feedback.jup.ag/"><span class="flex items-center gap-2 p-4 hover:text-primary py-2.5 text-xs font-normal"><span class="iconify shrink-0 ic--outline-lightbulb size-4"></span><span class="max-lg:hidden">Feature Request</span></span></a><a target="_blank" href="https://support.jup.ag/"><span class="flex items-center gap-2 p-4 hover:text-primary py-2.5 text-xs font-normal"><span class="iconify shrink-0 ic--outline-live-help size-4"></span><span class="max-lg:hidden">Help Center</span></span></a></div><div class="max-lg:h-2"></div><div class="flex flex-col items-center gap-1 lg:flex-row"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rf:" data-state="closed" class="outline-none" tabindex="-1"><a target="_blank" rel="noopener noreferrer" href="https://twitter.com/JupiterExchange" class="flex items-center justify-center p-2 hover:text-primary"><span class="iconify ph--x-logo-fill size-4"></span><span class="sr-only">Twitter</span></a></button><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rg:" data-state="closed" class="outline-none" tabindex="-1"><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/jup" class="flex items-center justify-center p-2 hover:text-primary"><span class="iconify ic--baseline-discord size-4"></span><span class="sr-only">Discord</span></a></button><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rh:" data-state="closed" class="outline-none" tabindex="-1"><a target="_blank" rel="noopener noreferrer" href="https://t.me/jup_marketing" class="flex items-center justify-center p-2 hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" stroke="none" fill="currentColor" width="12" height="12" class="size-4"><path d="M46.137,6.552c-0.75-0.636-1.928-0.727-3.146-0.238l-0.002,0C41.708,6.828,6.728,21.832,5.304,22.445 c-0.259,0.09-2.521,0.934-2.288,2.814c0.208,1.695,2.026,2.397,2.248,2.478l8.893,3.045c0.59,1.964,2.765,9.21,3.246,10.758 c0.3,0.965,0.789,2.233,1.646,2.494c0.752,0.29,1.5,0.025,1.984-0.355l5.437-5.043l8.777,6.845l0.209,0.125 c0.596,0.264,1.167,0.396,1.712,0.396c0.421,0,0.825-0.079,1.211-0.237c1.315-0.54,1.841-1.793,1.896-1.935l6.556-34.077 C47.231,7.933,46.675,7.007,46.137,6.552z M22,32l-3,8l-3-10l23-17L22,32z"></path></svg><span class="sr-only">Telegram</span></a></button><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:ri:" data-state="closed" class="outline-none" tabindex="-1"><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@Jupiter-Exchange" class="flex items-center justify-center p-2 hover:text-primary"><span class="iconify ph--youtube-logo-fill size-4"></span><span class="sr-only">YouTube</span></a></button><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rj:" data-state="closed" class="outline-none" tabindex="-1"><a target="_blank" rel="noopener noreferrer" href="https://www.reddit.com/r/jupiterexchange" class="flex items-center justify-center p-2 hover:text-primary"><span class="iconify ph--reddit-logo-fill size-4"></span><span class="sr-only">Reddit</span></a></button></div></div></nav><main class="flex min-h-0 flex-1 flex-col items-center px-4 pb-4 lg:pt-8"><div class="w-full space-y-4 lg:w-[32rem]"><h1 class="sr-only">The Solana Superapp. Spot, Perps, Portfolio, All in One.</h1><div class="space-y-4 sm:hidden"><div class="rounded-lg border border-neutral-850 text-xs text-neutral-300 w-0 min-w-full flex items-center"><a class="group inline-flex items-center gap-0.5 pl-3 pr-2" href="https://jup.ag/pro?tab=cooking"><h3 class="inline-flex items-center gap-1 font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.91639 2.04229C9.86569 1.94071 9.79394 1.8511 9.70593 1.77939C9.61792 1.70769 9.51565 1.65553 9.40593 1.6264C9.29621 1.59727 9.18154 1.59182 9.06955 1.61042C8.95756 1.62902 8.85081 1.67125 8.75639 1.73429C8.48039 1.91829 8.2652 2.18069 8.0988 2.43829C7.9276 2.70229 7.7764 3.00869 7.6428 3.33109C7.3756 3.97429 7.1516 4.74549 6.9708 5.51829C6.75214 6.46268 6.5884 7.41895 6.4804 8.38229C6.1549 8.17245 5.89337 7.87715 5.7244 7.52869C5.462 6.98469 5.40599 6.30149 5.40599 5.40549C5.40596 5.24729 5.35902 5.09265 5.27112 4.96112C5.18321 4.82959 5.05828 4.72708 4.91212 4.66654C4.76596 4.60601 4.60513 4.59017 4.44997 4.62102C4.29481 4.65187 4.15228 4.72804 4.04039 4.83989C3.51973 5.35944 3.10682 5.97672 2.82538 6.65629C2.54394 7.33587 2.39951 8.06434 2.40039 8.79989C2.40046 9.72078 2.62763 10.6275 3.06179 11.4396C3.49594 12.2517 4.12368 12.9442 4.88939 13.4558C5.65511 13.9674 6.53518 14.2823 7.45164 14.3725C8.36811 14.4628 9.29268 14.3256 10.1435 13.9732C10.9943 13.6208 11.745 13.064 12.3292 12.3521C12.9134 11.6402 13.3131 10.7953 13.4928 9.8921C13.6724 8.9889 13.6266 8.05533 13.3593 7.17408C13.092 6.29283 12.6115 5.49109 11.9604 4.83989C11.4868 4.36709 11.1764 4.05189 10.882 3.66629C10.5916 3.28549 10.3028 2.81589 9.91639 2.04229ZM9.69639 12.0959C9.36076 12.4311 8.93331 12.6593 8.46803 12.7518C8.00275 12.8442 7.52052 12.7967 7.08224 12.6152C6.64396 12.4337 6.26928 12.1264 6.00554 11.7321C5.7418 11.3379 5.60081 10.8743 5.60039 10.3999C5.60039 10.3999 6.30359 10.7999 7.60039 10.7999C7.60039 9.99989 8.00039 7.59989 8.60039 7.19989C9.00039 7.99989 9.22919 8.23429 9.69719 8.70309C9.92043 8.92563 10.0975 9.1901 10.2181 9.4813C10.3388 9.7725 10.4008 10.0847 10.4004 10.3999C10.4008 10.7151 10.3388 11.0273 10.2181 11.3185C10.0975 11.6097 9.92043 11.8741 9.69719 12.0967L9.69639 12.0959Z" fill="currentColor"></path></svg>Cooking</h3><span class="iconify text-neutral-400 ph--caret-right-bold group-hover:text-neutral-200"></span></a><div class="group flex gap-3 overflow-hidden text-xs" style="mask-image: linear-gradient(to right, transparent 0%, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 90%, transparent 100%);" translate="no"><div class="flex w-max shrink-0 gap-3 whitespace-nowrap group-hover:[animation-play-state:paused] marquee_marquee__Ls9Ak"><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2"><span class="mr-1 text-xxs text-neutral-500">#1</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image.png" alt="TROLL" width="18" height="18" draggable="false"></div><span translate="no">TROLL</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh"><span class="mr-1 text-xxs text-neutral-500">#2</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-2.png" alt="NVDAx" width="18" height="18" draggable="false"></div><span translate="no">NVDAx</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/GbbesPbaYh5uiAZSYNXTc7w9jty1rpg3P9L4JeN4LkKc"><span class="mr-1 text-xxs text-neutral-500">#3</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-11.png" alt="TRX" width="18" height="18" draggable="false"></div><span translate="no">TRX</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/Ey59PH7Z4BFU4HjyKnyMdWt5GGN76KazTAwQihoUXRnk"><span class="mr-1 text-xxs text-neutral-500">#4</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-3.png" alt="LAUNCHCOIN" width="18" height="18" draggable="false"></div><span translate="no">LAUNCHCOIN</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp"><span class="mr-1 text-xxs text-neutral-500">#5</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="2wrjAk4pYAACF3siDHAxt7yJY7kHgt57TZAkbgecKHMR.png" alt="CARDS" width="18" height="18" draggable="false"></div><span translate="no">CARDS</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/1zJX5gRnjLgmTpq5sVwkq69mNDQkCemqoasyjaPW6jm"><span class="mr-1 text-xxs text-neutral-500">#6</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-4.png" alt="KLED" width="18" height="18" draggable="false"></div><span translate="no">KLED</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/61V8vBaqAGMpgDQi4JcAwo1dmBGHsyhzodcPqnEVpump"><span class="mr-1 text-xxs text-neutral-500">#7</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-5.png" alt="arc" width="18" height="18" draggable="false"></div><span translate="no">arc</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/CreiuhfwdWCN5mJbMJtA9bBpYQrQF2tCBuZwSPWfpump"><span class="mr-1 text-xxs text-neutral-500">#8</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-1.jpg" alt="PYTHIA" width="18" height="18" draggable="false"></div><span translate="no">PYTHIA</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9"><span class="mr-1 text-xxs text-neutral-500">#9</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-6.png" alt="GIGA" width="18" height="18" draggable="false"></div><span translate="no">GIGA</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/DrZ26cKJDksVRWib3DVVsjo9eeXccc7hKhDJviiYEEZY"><span class="mr-1 text-xxs text-neutral-500">#10</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image.jpg" alt="YZY" width="18" height="18" draggable="false"></div><span translate="no">YZY</span></a></div><div class="flex w-max shrink-0 gap-3 whitespace-nowrap group-hover:[animation-play-state:paused] marquee_marquee__Ls9Ak"><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2"><span class="mr-1 text-xxs text-neutral-500">#1</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image.png" alt="TROLL" width="18" height="18" draggable="false"></div><span translate="no">TROLL</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/Xsc9qvGR1efVDFGLrVsmkzv3qi45LTBjeUKSPmx9qEh"><span class="mr-1 text-xxs text-neutral-500">#2</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-2.png" alt="NVDAx" width="18" height="18" draggable="false"></div><span translate="no">NVDAx</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/GbbesPbaYh5uiAZSYNXTc7w9jty1rpg3P9L4JeN4LkKc"><span class="mr-1 text-xxs text-neutral-500">#3</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-11.png" alt="TRX" width="18" height="18" draggable="false"></div><span translate="no">TRX</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/Ey59PH7Z4BFU4HjyKnyMdWt5GGN76KazTAwQihoUXRnk"><span class="mr-1 text-xxs text-neutral-500">#4</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-3.png" alt="LAUNCHCOIN" width="18" height="18" draggable="false"></div><span translate="no">LAUNCHCOIN</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp"><span class="mr-1 text-xxs text-neutral-500">#5</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="2wrjAk4pYAACF3siDHAxt7yJY7kHgt57TZAkbgecKHMR.png" alt="CARDS" width="18" height="18" draggable="false"></div><span translate="no">CARDS</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/1zJX5gRnjLgmTpq5sVwkq69mNDQkCemqoasyjaPW6jm"><span class="mr-1 text-xxs text-neutral-500">#6</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-4.png" alt="KLED" width="18" height="18" draggable="false"></div><span translate="no">KLED</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/61V8vBaqAGMpgDQi4JcAwo1dmBGHsyhzodcPqnEVpump"><span class="mr-1 text-xxs text-neutral-500">#7</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-5.png" alt="arc" width="18" height="18" draggable="false"></div><span translate="no">arc</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/CreiuhfwdWCN5mJbMJtA9bBpYQrQF2tCBuZwSPWfpump"><span class="mr-1 text-xxs text-neutral-500">#8</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-1.jpg" alt="PYTHIA" width="18" height="18" draggable="false"></div><span translate="no">PYTHIA</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9"><span class="mr-1 text-xxs text-neutral-500">#9</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image-6.png" alt="GIGA" width="18" height="18" draggable="false"></div><span translate="no">GIGA</span></a><a class="flex shrink-0 items-center py-2.5 font-medium text-neutral-500 hover:text-neutral-300" href="https://jup.ag/tokens/DrZ26cKJDksVRWib3DVVsjo9eeXccc7hKhDJviiYEEZY"><span class="mr-1 text-xxs text-neutral-500">#10</span><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 mr-1 size-4"><img class="size-full rounded-full" src="image.jpg" alt="YZY" width="18" height="18" draggable="false"></div><span translate="no">YZY</span></a></div></div></div></div><div class="flex flex-col gap-4"><div class="flex h-fit flex-1 flex-col items-center rounded-b-2xl rounded-t-3xl border border-neutral-850 bg-neutral-950 py-3 lg:max-w-lg w-full"><div role="group" dir="ltr" class="grid w-full grid-cols-3 border-b border-neutral-850 px-3 pb-3" tabindex="0" style="outline: none;"><button type="button" data-state="on" role="radio" aria-checked="true" class="flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded-full border-b border-transparent px-3 text-sm font-medium text-neutral-500 transition-all max-sm:w-full lg:px-4 data-[state=off]:hover:bg-primary/5 data-[state=off]:hover:text-primary data-[state=on]:bg-primary/10 data-[state=on]:text-primary disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary" tabindex="-1" data-radix-collection-item="">Market</button><button type="button" data-state="off" role="radio" aria-checked="false" class="flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded-full border-b border-transparent px-3 text-sm font-medium text-neutral-500 transition-all max-sm:w-full lg:px-4 data-[state=off]:hover:bg-primary/5 data-[state=off]:hover:text-primary data-[state=on]:bg-primary/10 data-[state=on]:text-primary disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary" tabindex="-1" data-radix-collection-item="">Trigger</button><button type="button" data-state="off" role="radio" aria-checked="false" class="flex h-10 items-center justify-center gap-2 whitespace-nowrap rounded-full border-b border-transparent px-3 text-sm font-medium text-neutral-500 transition-all max-sm:w-full lg:px-4 data-[state=off]:hover:bg-primary/5 data-[state=off]:hover:text-primary data-[state=on]:bg-primary/10 data-[state=on]:text-primary disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary" tabindex="-1" data-radix-collection-item="">Recurring</button></div><div class="w-full px-3 pt-3"><div class="flex flex-col gap-2"><div class="flex w-full flex-row items-center justify-between"><button type="button" class="flex h-7 items-center rounded-full border border-neutral-800 px-1.5 text-neutral-300 hover:bg-neutral-800"><div class="flex h-full items-center px-0.5 text-xs"><svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="mr-1 size-3 text-primary"><g clip-path="url(#clip0_1785_33901)"><path d="M7.20001 7.86127C7.45429 7.86127 7.69815 7.96228 7.87795 8.14208C8.05775 8.32188 8.15876 8.56574 8.15876 8.82002C8.15876 8.56574 8.25977 8.32188 8.43957 8.14208C8.61937 7.96228 8.86324 7.86127 9.11751 7.86127C8.86324 7.86127 8.61937 7.76026 8.43957 7.58046C8.25977 7.40066 8.15876 7.15679 8.15876 6.90252C8.15876 7.15679 8.05775 7.40066 7.87795 7.58046C7.69815 7.76026 7.45429 7.86127 7.20001 7.86127ZM7.20001 2.10877C7.45429 2.10877 7.69815 2.20978 7.87795 2.38958C8.05775 2.56938 8.15876 2.81324 8.15876 3.06752C8.15876 2.81324 8.25977 2.56938 8.43957 2.38958C8.61937 2.20978 8.86324 2.10877 9.11751 2.10877C8.86324 2.10877 8.61937 2.00776 8.43957 1.82796C8.25977 1.64816 8.15876 1.40429 8.15876 1.15002C8.15876 1.40429 8.05775 1.64816 7.87795 1.82796C7.69815 2.00776 7.45429 2.10877 7.20001 2.10877Z" stroke="currentColor" stroke-width="0.95875" stroke-linecap="round" stroke-linejoin="round"></path><path d="M4.09971 1.42435C4.08095 1.37314 4.04691 1.32892 4.00219 1.29768C3.95748 1.26644 3.90425 1.24969 3.84971 1.24969C3.79517 1.24969 3.74194 1.26644 3.69723 1.29768C3.65251 1.32892 3.61847 1.37314 3.59971 1.42435L3.34534 2.11935C3.1457 2.6643 2.82969 3.15919 2.41931 3.56957C2.00893 3.97996 1.51403 4.29596 0.969084 4.4956L0.274086 4.74998C0.222871 4.76874 0.178655 4.80279 0.147417 4.8475C0.116179 4.89221 0.0994263 4.94543 0.0994263 4.99998C0.0994263 5.05452 0.116179 5.10775 0.147417 5.15246C0.178655 5.19717 0.222871 5.23122 0.274086 5.24998L0.969084 5.50435C1.51403 5.70399 2.00893 6.02001 2.41931 6.43039C2.82969 6.84077 3.1457 7.33566 3.34534 7.88061L3.59971 8.5756C3.61847 8.62681 3.65251 8.67103 3.69723 8.70227C3.74194 8.7335 3.79517 8.75026 3.84971 8.75026C3.90425 8.75026 3.95748 8.7335 4.00219 8.70227C4.04691 8.67103 4.08095 8.62681 4.09971 8.5756L4.35409 7.88061C4.55372 7.33566 4.86973 6.84077 5.28011 6.43039C5.69049 6.02001 6.18538 5.70399 6.73033 5.50435L7.42533 5.24998C7.47654 5.23122 7.52076 5.19717 7.552 5.15246C7.58323 5.10775 7.59999 5.05452 7.59999 4.99998C7.59999 4.94543 7.58323 4.89221 7.552 4.8475C7.52076 4.80279 7.47654 4.76874 7.42533 4.74998L6.73033 4.4956C6.18538 4.29596 5.8125 3.97995 5.40212 3.56957C4.99174 3.15919 4.55372 2.6643 4.35409 2.11935L4.09971 1.42435Z" fill="currentColor"></path></g><defs><clipPath id="clip0_1785_33901"><rect width="10" height="10" fill="white"></rect></clipPath></defs></svg>Ultra V2</div><span class="iconify ml-1 size-4 -rotate-90 text-neutral-500 ph--sliders"></span></button><button type="button" class="flex size-7 cursor-pointer items-center justify-center rounded-full border border-neutral-800 text-neutral-500 hover:bg-neutral-800 hover:text-neutral-300"><span class="size-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" class="size-4"><path fill="currentColor" d="M244 56v48a12 12 0 0 1-12 12h-48a12 12 0 1 1 0-24h17.1l-19-17.38c-.13-.12-.26-.24-.38-.37A76 76 0 1 0 127 204h1a75.53 75.53 0 0 0 52.15-20.72a12 12 0 0 1 16.49 17.45A99.45 99.45 0 0 1 128 228h-1.37a100 100 0 1 1 71.88-170.94L220 76.72V56a12 12 0 0 1 24 0"></path></svg></span></button></div><div><form><div class="relative"><div class="flex min-h-[119px] flex-col space-y-2 rounded-xl border px-4 py-3 focus-within:border-primary/50 focus-within:shadow-swap-input-dark border-neutral-800 bg-neutral-900"><div class="flex min-h-[26px] items-center justify-between"><span class="text-xs">Selling</span><div class="flex space-x-2"></div></div><div class="flex flex-1 items-center justify-between gap-x-2"><div class="flex min-h-[70px] flex-col justify-center gap-y-1"><div class="group/select flex items-center justify-between"><button type="button" class="flex h-10 items-center space-x-3 rounded-full border-transparent px-3 py-2 bg-neutral-800 border group-hover/select:border-primary/50 group-hover/select:bg-[rgba(199,242,132,0.2)] group-hover/select:shadow-swap-input-dark"><div class="rounded-full"><span class="relative"><img src="image-7.png" alt="USDC" width="24" height="24" style="max-width: 24px; max-height: 24px;" class="shrink-0 rounded-full object-contain"></span></div><div class="text-sm font-semibold" translate="no">USDC</div><div class="fill-current text-neutral-500 group-hover/select:text-primary"><svg width="10" height="6" viewBox="0 0 10 6" fill="inherit" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683416 -0.097631 1.31658 -0.097631 1.7071 0.292893L4.99999 3.58579L8.29288 0.292893C8.6834 -0.0976311 9.31657 -0.0976311 9.70709 0.292893C10.0976 0.683417 10.0976 1.31658 9.70709 1.70711L5.7071 5.70711C5.31657 6.09763 4.68341 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976309 1.31658 -0.0976309 0.683417 0.292893 0.292893Z" fill="inherit"></path></svg></div></button></div></div><div class="flex h-full flex-col text-right"><input inputmode="decimal" autocomplete="off" name="fromValue" data-lpignore="true" placeholder="0.00" class="size-full bg-transparent text-right placeholder:text-neutral-600 disabled:cursor-not-allowed disabled:text-neutral-500 disabled:opacity-100 h-[38px] font-semibold outline-none text-3xl" type="text" value=""><div class="mt-1"><div class="text-xs text-neutral-600">$0</div></div></div></div></div><div class="relative -my-3 flex justify-center"><button type="button" class="group/flip flex size-8 cursor-pointer flex-col justify-center rounded-full border-[3px] border-neutral-950 bg-neutral-925 text-neutral-500 enabled:hover:border-primary enabled:hover:shadow-swap-input-dark disabled:pointer-events-none"><span class="flex w-full justify-center fill-current text-neutral-500 transition-transform duration-300 group-hover/flip:text-primary"><svg width="21" height="22" viewBox="0 0 21 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M6.51043 7.47998V14.99H7.77043V7.47998L9.66043 9.36998L10.5505 8.47994L7.5859 5.51453C7.3398 5.26925 6.94114 5.26925 6.69504 5.51453L3.73047 8.47994L4.62051 9.36998L6.51043 7.47998Z" fill="currentColor"></path><path d="M14.4902 14.52V7.01001H13.2302V14.52L11.3402 12.63L10.4502 13.5201L13.4148 16.4855C13.6609 16.7308 14.0595 16.7308 14.3056 16.4855L17.2702 13.5201L16.3802 12.63L14.4902 14.52Z" fill="currentColor"></path></svg></span></button></div><div class="relative min-h-[109px] group flex flex-col space-y-1 rounded-xl border px-4 py-3 focus-within:border-primary/50 focus-within:shadow-swap-input-dark border-neutral-850"><div class="flex items-center justify-between"><div class="flex items-center gap-x-2"><span class="text-xs">Buying</span></div></div><div class="flex flex-1 items-center justify-between gap-x-2"><div class="flex min-h-[70px] flex-col justify-center gap-y-1"><div class="group/select flex items-center justify-between"><button type="button" class="flex h-10 items-center space-x-3 rounded-full border-transparent px-3 py-2 bg-neutral-800 border group-hover/select:border-primary/50 group-hover/select:bg-[rgba(199,242,132,0.2)] group-hover/select:shadow-swap-input-dark"><div class="rounded-full"><span class="relative"><img src="image-8.png" alt="SOL" width="24" height="24" style="max-width: 24px; max-height: 24px;" class="shrink-0 rounded-full object-contain"></span></div><div class="text-sm font-semibold" translate="no">SOL</div><div class="fill-current text-neutral-500 group-hover/select:text-primary"><svg width="10" height="6" viewBox="0 0 10 6" fill="inherit" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292893 0.292893C0.683416 -0.097631 1.31658 -0.097631 1.7071 0.292893L4.99999 3.58579L8.29288 0.292893C8.6834 -0.0976311 9.31657 -0.0976311 9.70709 0.292893C10.0976 0.683417 10.0976 1.31658 9.70709 1.70711L5.7071 5.70711C5.31657 6.09763 4.68341 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976309 1.31658 -0.0976309 0.683417 0.292893 0.292893Z" fill="inherit"></path></svg></div></button></div></div><div class="flex h-full flex-col text-right"><input inputmode="decimal" autocomplete="off" name="toValue" data-lpignore="true" disabled="" placeholder="" class="size-full bg-transparent text-right placeholder:text-neutral-600 disabled:cursor-not-allowed disabled:text-neutral-500 disabled:opacity-100 h-[38px] font-semibold outline-none disabled:!text-white text-3xl" type="text" value=""><span class="mt-1 self-end"><div class="text-xs text-v2-lily/25">$0</div></span></div></div></div></div><div class="my-3 space-y-2"></div><button class="flex items-center justify-center disabled:opacity-50 gap-1.5 border-2 border-primary bg-primary text-primary-600 enabled:hover:bg-primary-300 enabled:hover:opacity-80 h-14 px-4 py-5 text-lg rounded-xl font-semibold w-full" type="button">Connect</button></form></div></div></div></div><div class="grid grid-cols-1 gap-2 xs:grid-cols-2 lg:gap-4"><a class="group flex items-center justify-between gap-1 rounded-2xl border border-neutral-850 bg-neutral-925 p-2 text-sm hover:bg-neutral-900 sm:p-2.5 lg:p-4" href="https://jup.ag/tokens/EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"><div class="flex items-center gap-2 overflow-hidden"><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 size-6 sm:size-7"><img class="size-full rounded-full" src="image-9.png" alt="USDC" width="28" height="28" draggable="false"></div><div class="flex min-w-0 flex-col"><div class="truncate"><span translate="no" title="USDC">USDC</span><span class="iconify hidden text-xs ph--arrow-up-right-bold group-hover:inline-flex group-hover:animate-in group-hover:fade-in-0 group-hover:slide-in-from-bottom-1 group-hover:slide-in-from-left-1"></span></div><span class="whitespace-nowrap text-xs text-neutral-500" translate="no">EPjF…Dt1v</span></div></div><div class="flex flex-col text-right"><span class="relative inline-flex items-center rounded-sm text-neutral-200" data-num="0.9997132146426202"><span translate="no">$0,99971</span></span><div class="text-xs leading-none text-emerald">0&nbsp;%</div></div></a><a class="group flex items-center justify-between gap-1 rounded-2xl border border-neutral-850 bg-neutral-925 p-2 text-sm hover:bg-neutral-900 sm:p-2.5 lg:p-4" href="https://jup.ag/tokens/So11111111111111111111111111111111111111112"><div class="flex items-center gap-2 overflow-hidden"><div class="relative z-[1] flex shrink-0 rounded-full bg-neutral-850 size-6 sm:size-7"><img class="size-full rounded-full" src="image-12.png" alt="SOL" width="28" height="28" draggable="false"></div><div class="flex min-w-0 flex-col"><div class="truncate"><span translate="no" title="SOL">SOL</span><span class="iconify hidden text-xs ph--arrow-up-right-bold group-hover:inline-flex group-hover:animate-in group-hover:fade-in-0 group-hover:slide-in-from-bottom-1 group-hover:slide-in-from-left-1"></span></div><span class="whitespace-nowrap text-xs text-neutral-500" translate="no">So11…1112</span></div></div><div class="flex flex-col text-right"><span class="relative inline-flex items-center rounded-sm text-neutral-200" data-num="196.61391547228237"><span translate="no">$196,61</span></span><div class="text-xs leading-none text-rose">-0,78&nbsp;%</div></div></a></div><a class="group flex items-center justify-between gap-1 rounded-2xl border border-neutral-850 px-4 py-3 text-sm hover:bg-neutral-850/30" href="https://jup.ag/swap?sell=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&amp;buy=So11111111111111111111111111111111111111112"><div>Open Swap page</div><div><span class="iconify text-lg text-neutral-500 ph--caret-right-bold group-hover:text-neutral-200"></span></div></a></div><div class="rounded-lg border border-neutral-850 text-xs text-neutral-300 w-full sm:hidden"><div class="flex items-center justify-between gap-1 whitespace-pre px-2.5 py-2.5 lg:px-4 lg:py-4 pb-2 lg:pb-2"><h3 class="inline-flex items-center gap-1 font-semibold"><span><span class="inline sm:hidden lg:inline">Launchpad </span>Runners</span></h3><a class="inline-flex items-center gap-0.5 text-neutral-400 hover:text-neutral-200 hover:underline" href="https://jup.ag/pro?tab=launchpads&amp;view=runners">More<span class="iconify size-3 ph--caret-right-bold"></span></a></div><div class="px-1.5 pb-1.5"><div class="transition-all duration-300 ease-in-out"><a class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium text-neutral-500 hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5" href="https://jup.ag/tokens/7W4geAJyy7hxuPXESMMBaW8Zi4MbhVN9uvt6BJ2SEPAV"><div class="flex items-center gap-1.5 overflow-hidden py-0.5"><div class="relative z-[1] flex rounded-full bg-neutral-850 size-6 shrink-0"><img class="size-full rounded-full" src="image-2.jpg" alt="NYX" width="24" height="24" draggable="false"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r1d:" data-state="closed" class="outline-none" tabindex="-1"><div class="absolute -bottom-px -right-1 flex shrink-0 items-center justify-center overflow-hidden rounded-full border bg-neutral-950 p-0.5" style="border-color: rgb(96, 205, 136);"><img aria-label="Pump" src="pump.fun.svg" class="rounded-full size-2"></div></button></div><div class="flex min-w-0 items-center lg:gap-1"><span class="truncate text-neutral-100" translate="no" title="NYX">NYX</span><div class="leading-none text-emerald">+127,97&nbsp;%</div></div></div><div class="flex gap-0.5 text-right max-lg:flex-col lg:gap-1.5"><span class="max-lg:text-xxs">MC</span><span class="relative inline-flex items-center rounded-sm text-neutral-200" data-num="6636232.707584176"><span translate="no">$6,64&nbsp;млн</span></span></div></a></div></div></div><div class="rounded-lg border border-neutral-850 text-xs text-neutral-300 w-full sm:hidden"><div class="flex items-center justify-between gap-1 whitespace-pre px-2.5 py-2.5 lg:px-4 lg:py-4 pb-2 lg:pb-2"><h3 class="inline-flex items-center gap-1 font-semibold">Earn flexible yield</h3><a class="inline-flex items-center gap-0.5 text-neutral-400 hover:text-neutral-200 hover:underline" href="https://jup.ag/lend/earn">More<span class="iconify size-3 ph--caret-right-bold"></span></a></div><div class="px-1.5 pb-1.5"><div class="transition-all duration-300 ease-in-out"><a href="https://jup.ag/lend/earn/USDC/deposit"><div class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5"><div class="flex items-center gap-1.5"><img class="size-5 shrink-0" height="32" width="32" alt="USD Coin" src="usdc.png"><span class="min-w-0 truncate text-xs font-medium group-hover:text-neutral-100">USDC</span></div><div class="flex shrink-0 items-center gap-1 text-xs"><span class="text-green-400 font-medium">~5,11&nbsp;%</span><span class="text-neutral-400">APY</span></div></div></a><a href="https://jup.ag/lend/earn/USDT/deposit"><div class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5"><div class="flex items-center gap-1.5"><img class="size-5 shrink-0" height="32" width="32" alt="USDT" src="usdt.png"><span class="min-w-0 truncate text-xs font-medium group-hover:text-neutral-100">USDT</span></div><div class="flex shrink-0 items-center gap-1 text-xs"><span class="text-green-400 font-medium">~7,09&nbsp;%</span><span class="text-neutral-400">APY</span></div></div></a><a href="https://jup.ag/lend/earn/EURC/deposit"><div class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5"><div class="flex items-center gap-1.5"><img class="size-5 shrink-0" height="32" width="32" alt="EURC" src="eurc.png"><span class="min-w-0 truncate text-xs font-medium group-hover:text-neutral-100">EURC</span></div><div class="flex shrink-0 items-center gap-1 text-xs"><span class="text-green-400 font-medium">~2,24&nbsp;%</span><span class="text-neutral-400">APY</span></div></div></a></div><div class="flex items-center justify-center"><button class="group/dot px-1.5 py-2" aria-label="Go to page 1"><span class="block size-1.5 rounded-full transition-all duration-200 bg-neutral-200"></span><span class="sr-only">Go to page 1</span></button><button class="group/dot px-1.5 py-2" aria-label="Go to page 2"><span class="block size-1.5 rounded-full transition-all duration-200 bg-neutral-600 group-hover/dot:bg-neutral-400"></span><span class="sr-only">Go to page 2</span></button></div></div></div></div><footer class="mt-auto w-full pt-4 text-xs sm:hidden"><div class="flex flex-1 justify-end"><div class="flex cursor-pointer items-center space-x-2 p-2 font-semibold text-neutral-400 hover:text-primary" type="button" id="radix-:rq:" aria-haspopup="menu" aria-expanded="false" data-state="closed"><svg height="14" width="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.855036 13.4987L2.91504 11.4387C3.29067 11.0643 3.7994 10.8537 4.33004 10.8537H11.0001C11.7958 10.8531 12.5583 10.5368 13.1208 9.97431C13.6833 9.41181 13.9995 8.64932 14.0001 7.85367V3.35367C14.0001 2.55804 13.6845 1.79492 13.1214 1.23239C12.5589 0.669894 11.7958 0.353638 11.0001 0.353638H3.00011C2.20448 0.353638 1.44136 0.669894 0.878828 1.23239C0.315708 1.79489 7.62939e-05 2.55802 7.62939e-05 3.35367V13.1437C7.62939e-05 13.3462 0.122575 13.5287 0.309452 13.6062C0.496332 13.6844 0.711276 13.6418 0.855036 13.4987ZM4.26496 4.06364C4.40683 3.63738 4.72558 3.29301 5.13997 3.11865C5.18497 3.09865 5.22996 3.07865 5.27496 3.06365V3.06427C5.98997 2.85365 6.74871 3.21865 7.03 3.90864L7.15 4.18864V4.18926C7.20688 4.31989 7.35876 4.38051 7.49001 4.32426L7.76501 4.20426C8.44439 3.90239 9.24252 4.15801 9.62005 4.79863C9.64005 4.84363 9.66505 4.88863 9.68505 4.93363C9.86193 5.34738 9.85318 5.81738 9.66005 6.22426C9.48569 6.5855 9.18255 6.86925 8.81005 7.01862L6.05997 8.19862C5.9581 8.243 5.84247 8.24425 5.73935 8.203C5.63622 8.16175 5.55372 8.08112 5.50997 7.97863L4.33496 5.22855C4.16997 4.86229 4.14496 4.44801 4.26496 4.06364Z" fill="currentColor"></path></svg> <span>Talk to us</span></div></div></footer></main><div class="flex shrink flex-col border-l border-neutral-850 pt-2 text-neutral-400 max-xl:w-fit lg:w-80 lg:pt-4 max-sm:hidden"><div class="flex flex-1 flex-col gap-2 overflow-y-auto px-2 lg:gap-4 lg:px-4"><div class="rounded-lg border border-neutral-850 text-xs text-neutral-300 w-0 min-w-full"><div class="flex items-center justify-between gap-1 whitespace-pre px-2.5 py-2.5 lg:px-4 lg:py-4 pb-2 lg:pb-2"><h3 class="inline-flex items-center gap-1 font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.91639 2.04229C9.86569 1.94071 9.79394 1.8511 9.70593 1.77939C9.61792 1.70769 9.51565 1.65553 9.40593 1.6264C9.29621 1.59727 9.18154 1.59182 9.06955 1.61042C8.95756 1.62902 8.85081 1.67125 8.75639 1.73429C8.48039 1.91829 8.2652 2.18069 8.0988 2.43829C7.9276 2.70229 7.7764 3.00869 7.6428 3.33109C7.3756 3.97429 7.1516 4.74549 6.9708 5.51829C6.75214 6.46268 6.5884 7.41895 6.4804 8.38229C6.1549 8.17245 5.89337 7.87715 5.7244 7.52869C5.462 6.98469 5.40599 6.30149 5.40599 5.40549C5.40596 5.24729 5.35902 5.09265 5.27112 4.96112C5.18321 4.82959 5.05828 4.72708 4.91212 4.66654C4.76596 4.60601 4.60513 4.59017 4.44997 4.62102C4.29481 4.65187 4.15228 4.72804 4.04039 4.83989C3.51973 5.35944 3.10682 5.97672 2.82538 6.65629C2.54394 7.33587 2.39951 8.06434 2.40039 8.79989C2.40046 9.72078 2.62763 10.6275 3.06179 11.4396C3.49594 12.2517 4.12368 12.9442 4.88939 13.4558C5.65511 13.9674 6.53518 14.2823 7.45164 14.3725C8.36811 14.4628 9.29268 14.3256 10.1435 13.9732C10.9943 13.6208 11.745 13.064 12.3292 12.3521C12.9134 11.6402 13.3131 10.7953 13.4928 9.8921C13.6724 8.9889 13.6266 8.05533 13.3593 7.17408C13.092 6.29283 12.6115 5.49109 11.9604 4.83989C11.4868 4.36709 11.1764 4.05189 10.882 3.66629C10.5916 3.28549 10.3028 2.81589 9.91639 2.04229ZM9.69639 12.0959C9.36076 12.4311 8.93331 12.6593 8.46803 12.7518C8.00275 12.8442 7.52052 12.7967 7.08224 12.6152C6.64396 12.4337 6.26928 12.1264 6.00554 11.7321C5.7418 11.3379 5.60081 10.8743 5.60039 10.3999C5.60039 10.3999 6.30359 10.7999 7.60039 10.7999C7.60039 9.99989 8.00039 7.59989 8.60039 7.19989C9.00039 7.99989 9.22919 8.23429 9.69719 8.70309C9.92043 8.92563 10.0975 9.1901 10.2181 9.4813C10.3388 9.7725 10.4008 10.0847 10.4004 10.3999C10.4008 10.7151 10.3388 11.0273 10.2181 11.3185C10.0975 11.6097 9.92043 11.8741 9.69719 12.0967L9.69639 12.0959Z" fill="currentColor"></path></svg>Cooking</h3><a class="inline-flex items-center gap-0.5 text-neutral-400 hover:text-neutral-200 hover:underline" href="https://jup.ag/pro?tab=cooking">More<span class="iconify size-3 ph--caret-right-bold"></span></a></div><div class="px-1.5 pb-1.5"><div class="transition-all duration-300 ease-in-out"><a class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium text-neutral-500 hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5" href="https://jup.ag/tokens/Ey59PH7Z4BFU4HjyKnyMdWt5GGN76KazTAwQihoUXRnk"><div class="flex items-center gap-1.5 overflow-hidden py-0.5"><span class="group-hover:text-neutral-100 max-md:text-xxs">#4</span><div class="relative z-[1] flex rounded-full bg-neutral-850 size-6 shrink-0"><img class="size-full rounded-full" src="image-13.png" alt="LAUNCHCOIN" width="24" height="24" draggable="false"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r1l:" data-state="closed" class="outline-none" tabindex="-1"><div class="absolute -bottom-px -right-1 flex shrink-0 items-center justify-center overflow-hidden rounded-full border bg-neutral-950 p-0.5" style="border-color: rgb(0, 213, 69);"><img aria-label="Believe" src="Believe.svg" class="rounded-full size-2"></div></button></div><div class="flex min-w-0 items-center lg:gap-1"><span class="truncate text-neutral-100" translate="no" title="LAUNCHCOIN">LAUNCHCOIN</span><div class="leading-none text-emerald">+11,23&nbsp;%</div></div></div><div class="flex gap-0.5 text-right max-lg:flex-col lg:gap-1.5"><span class="max-lg:text-xxs">Vol</span><span class="relative inline-flex items-center rounded-sm text-neutral-200" data-num="4131504.902544652"><span translate="no">$4,13&nbsp;млн</span></span></div></a><a class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium text-neutral-500 hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5" href="https://jup.ag/tokens/CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp"><div class="flex items-center gap-1.5 overflow-hidden py-0.5"><span class="group-hover:text-neutral-100 max-md:text-xxs">#5</span><div class="relative z-[1] flex rounded-full bg-neutral-850 size-6 shrink-0"><img class="size-full rounded-full" src="2wrjAk4pYAACF3siDHAxt7yJY7kHgt57TZAkbgecKHMR.png" alt="CARDS" width="24" height="24" draggable="false"></div><div class="flex min-w-0 items-center lg:gap-1"><span class="truncate text-neutral-100" translate="no" title="CARDS">CARDS</span><div class="leading-none text-emerald">+8,56&nbsp;%</div></div></div><div class="flex gap-0.5 text-right max-lg:flex-col lg:gap-1.5"><span class="max-lg:text-xxs">Vol</span><span class="relative inline-flex items-center rounded-sm text-neutral-200" data-num="3461492.0026181876"><span translate="no">$3,46&nbsp;млн</span></span></div></a><a class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium text-neutral-500 hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5" href="https://jup.ag/tokens/1zJX5gRnjLgmTpq5sVwkq69mNDQkCemqoasyjaPW6jm"><div class="flex items-center gap-1.5 overflow-hidden py-0.5"><span class="group-hover:text-neutral-100 max-md:text-xxs">#6</span><div class="relative z-[1] flex rounded-full bg-neutral-850 size-6 shrink-0"><img class="size-full rounded-full" src="image-14.png" alt="KLED" width="24" height="24" draggable="false"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r1m:" data-state="closed" class="outline-none" tabindex="-1"><div class="absolute -bottom-px -right-1 flex shrink-0 items-center justify-center overflow-hidden rounded-full border bg-neutral-950 p-0.5" style="border-color: rgb(248, 76, 0);"><img aria-label="Meteora DBC" src="met-dbc.svg" class="rounded-full size-2"></div></button></div><div class="flex min-w-0 items-center lg:gap-1"><span class="truncate text-neutral-100" translate="no" title="KLED">KLED</span><div class="leading-none text-emerald">+74,73&nbsp;%</div></div></div><div class="flex gap-0.5 text-right max-lg:flex-col lg:gap-1.5"><span class="max-lg:text-xxs">Vol</span><span class="relative inline-flex items-center rounded-sm text-neutral-200" data-num="2347766.215431347"><span translate="no">$2,35&nbsp;млн</span></span></div></a></div><div class="flex items-center justify-center"><button class="group/dot px-1.5 py-2" aria-label="Go to page 1"><span class="block size-1.5 rounded-full transition-all duration-200 bg-neutral-600 group-hover/dot:bg-neutral-400"></span><span class="sr-only">Go to page 1</span></button><button class="group/dot px-1.5 py-2" aria-label="Go to page 2"><span class="block size-1.5 rounded-full transition-all duration-200 bg-neutral-200"></span><span class="sr-only">Go to page 2</span></button><button class="group/dot px-1.5 py-2" aria-label="Go to page 3"><span class="block size-1.5 rounded-full transition-all duration-200 bg-neutral-600 group-hover/dot:bg-neutral-400"></span><span class="sr-only">Go to page 3</span></button></div></div></div><div class="rounded-lg border border-neutral-850 text-xs text-neutral-300"><div class="flex items-center justify-between gap-1 whitespace-pre px-2.5 py-2.5 lg:px-4 lg:py-4 pb-2 lg:pb-2"><h3 class="inline-flex items-center gap-1 font-semibold"><span><span class="inline sm:hidden lg:inline">Launchpad </span>Runners</span></h3><a class="inline-flex items-center gap-0.5 text-neutral-400 hover:text-neutral-200 hover:underline" href="https://jup.ag/pro?tab=launchpads&amp;view=runners">More<span class="iconify size-3 ph--caret-right-bold"></span></a></div><div class="px-1.5 pb-1.5"><div class="transition-all duration-300 ease-in-out"><a class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium text-neutral-500 hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5" href="https://jup.ag/tokens/7W4geAJyy7hxuPXESMMBaW8Zi4MbhVN9uvt6BJ2SEPAV"><div class="flex items-center gap-1.5 overflow-hidden py-0.5"><div class="relative z-[1] flex rounded-full bg-neutral-850 size-6 shrink-0"><img class="size-full rounded-full" src="image-2.jpg" alt="NYX" width="24" height="24" draggable="false"><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r1e:" data-state="closed" class="outline-none" tabindex="-1"><div class="absolute -bottom-px -right-1 flex shrink-0 items-center justify-center overflow-hidden rounded-full border bg-neutral-950 p-0.5" style="border-color: rgb(96, 205, 136);"><img aria-label="Pump" src="pump.fun.svg" class="rounded-full size-2"></div></button></div><div class="flex min-w-0 items-center lg:gap-1"><span class="truncate text-neutral-100" translate="no" title="NYX">NYX</span><div class="leading-none text-emerald">+127,97&nbsp;%</div></div></div><div class="flex gap-0.5 text-right max-lg:flex-col lg:gap-1.5"><span class="max-lg:text-xxs">MC</span><span class="relative inline-flex items-center rounded-sm text-neutral-200" data-num="6636232.707584176"><span translate="no">$6,64&nbsp;млн</span></span></div></a></div></div></div><div class="rounded-lg border border-neutral-850 text-xs text-neutral-300"><div class="flex items-center justify-between gap-1 whitespace-pre px-2.5 py-2.5 lg:px-4 lg:py-4 pb-2 lg:pb-2"><h3 class="inline-flex items-center gap-1 font-semibold">Earn flexible yield</h3><a class="inline-flex items-center gap-0.5 text-neutral-400 hover:text-neutral-200 hover:underline" href="https://jup.ag/lend/earn">More<span class="iconify size-3 ph--caret-right-bold"></span></a></div><div class="px-1.5 pb-1.5"><div class="transition-all duration-300 ease-in-out"><a href="https://jup.ag/lend/earn/USDC/deposit"><div class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5"><div class="flex items-center gap-1.5"><img class="size-5 shrink-0" height="32" width="32" alt="USD Coin" src="usdc.png"><span class="min-w-0 truncate text-xs font-medium group-hover:text-neutral-100">USDC</span></div><div class="flex shrink-0 items-center gap-1 text-xs"><span class="text-green-400 font-medium">~5,11&nbsp;%</span><span class="text-neutral-400">APY</span></div></div></a><a href="https://jup.ag/lend/earn/USDT/deposit"><div class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5"><div class="flex items-center gap-1.5"><img class="size-5 shrink-0" height="32" width="32" alt="USDT" src="usdt.png"><span class="min-w-0 truncate text-xs font-medium group-hover:text-neutral-100">USDT</span></div><div class="flex shrink-0 items-center gap-1 text-xs"><span class="text-green-400 font-medium">~7,09&nbsp;%</span><span class="text-neutral-400">APY</span></div></div></a><a href="https://jup.ag/lend/earn/EURC/deposit"><div class="group flex shrink-0 cursor-pointer items-center justify-between gap-1 rounded-lg p-2 font-medium hover:bg-neutral-850/50 max-xs:gap-2 md:p-2.5"><div class="flex items-center gap-1.5"><img class="size-5 shrink-0" height="32" width="32" alt="EURC" src="eurc.png"><span class="min-w-0 truncate text-xs font-medium group-hover:text-neutral-100">EURC</span></div><div class="flex shrink-0 items-center gap-1 text-xs"><span class="text-green-400 font-medium">~2,24&nbsp;%</span><span class="text-neutral-400">APY</span></div></div></a></div><div class="flex items-center justify-center"><button class="group/dot px-1.5 py-2" aria-label="Go to page 1"><span class="block size-1.5 rounded-full transition-all duration-200 bg-neutral-200"></span><span class="sr-only">Go to page 1</span></button><button class="group/dot px-1.5 py-2" aria-label="Go to page 2"><span class="block size-1.5 rounded-full transition-all duration-200 bg-neutral-600 group-hover/dot:bg-neutral-400"></span><span class="sr-only">Go to page 2</span></button></div></div></div></div></div></div></div><iframe width="0" height="0" style="display: none; height: 0px; width: 0px;" src="index_1.html"></iframe></div>
+<next-route-announcer><p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;"></p></next-route-announcer><div><nav class="fixed inset-x-0 bottom-0 z-30 border-t border-neutral-800 bg-neutral-950 sm:hidden"><div class="mb-[env(safe-area-inset-bottom)] flex h-14 items-center text-sm"><div class="grid size-full grid-cols-5"><a class="relative flex h-full select-none flex-col items-center justify-center gap-0.5 whitespace-nowrap px-1 font-medium transition duration-100 text-neutral-500 hover:text-neutral-300" href="https://jup.ag/swap?sell=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&amp;buy=So11111111111111111111111111111111111111112"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" height="16" width="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.17246 11.0054L7.49986 13.3336H1.66626V7.50005L3.99446 9.82744L11.6663 2.15485L12.8452 3.33375L5.17246 11.0054ZM18.3335 6.66645V12.5L16.0053 10.1726L8.33346 17.8452L7.15456 16.6663L14.8272 8.99455L12.4998 6.66635L18.3335 6.66645Z" fill="currentColor"></path></svg><span class="w-full text-center">Swap</span></a><a class="relative flex h-full select-none flex-col items-center justify-center gap-0.5 whitespace-nowrap px-1 font-medium transition duration-100 text-neutral-500 hover:text-neutral-300" href="https://jup.ag/pro"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" class="size-[18px]"><path fill="currentColor" d="M7 19v-1H6q-.425 0-.712-.288T5 17V7q0-.425.288-.712T6 6h1V5q0-.425.288-.712T8 4t.713.288T9 5v1h1q.425 0 .713.288T11 7v10q0 .425-.288.713T10 18H9v1q0 .425-.288.713T8 20t-.712-.288T7 19m0-3h2V8H7zm8 3v-4h-1q-.425 0-.712-.288T13 14V9q0-.425.288-.712T14 8h1V5q0-.425.288-.712T16 4t.713.288T17 5v3h1q.425 0 .713.288T19 9v5q0 .425-.288.713T18 15h-1v4q0 .425-.288.713T16 20t-.712-.288T15 19m0-6h2v-3h-2zm1-1.5"></path></svg><span class="w-full text-center"><span class="-mt-1">Pro</span></span></a><a class="relative flex h-full select-none flex-col items-center justify-center gap-0.5 whitespace-nowrap px-1 font-medium transition duration-100 text-neutral-500 hover:text-neutral-300" href="https://jup.ag/perps"><svg width="16" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4"><path d="M3.44806 4.86956C3.44806 5.35387 3.64045 5.81834 3.98291 6.1608C4.32536 6.50325 4.78984 6.69565 5.27414 6.69565C5.75845 6.69565 6.22292 6.50325 6.56538 6.1608C6.90784 5.81834 7.10023 5.35387 7.10023 4.86956C7.10023 4.38525 6.90784 3.92078 6.56538 3.57832C6.22292 3.23587 5.75845 3.04348 5.27414 3.04348C4.78984 3.04348 4.32536 3.23587 3.98291 3.57832C3.64045 3.92078 3.44806 4.38525 3.44806 4.86956Z" fill="currentColor"></path><path d="M10.7524 12.1739C10.7524 12.6582 10.9448 13.1227 11.2873 13.4651C11.6297 13.8076 12.0942 14 12.5785 14C13.0628 14 13.5273 13.8076 13.8697 13.4651C14.2122 13.1227 14.4046 12.6582 14.4046 12.1739C14.4046 11.6896 14.2122 11.2251 13.8697 10.8827C13.5273 10.5402 13.0628 10.3478 12.5785 10.3478C12.0942 10.3478 11.6297 10.5402 11.2873 10.8827C10.9448 11.2251 10.7524 11.6896 10.7524 12.1739Z" fill="currentColor"></path><path d="M15.0567 2.00001H10.8828C10.8057 1.99949 10.7302 2.02207 10.6661 2.06484C10.6019 2.10762 10.552 2.16863 10.5228 2.24001C10.492 2.31143 10.4835 2.39049 10.4984 2.46683C10.5133 2.54317 10.5509 2.61323 10.6063 2.66783L12.0568 4.10783C12.0694 4.12 12.0794 4.13459 12.0863 4.15072C12.0931 4.16686 12.0967 4.18421 12.0967 4.20175C12.0967 4.21928 12.0931 4.23663 12.0863 4.25277C12.0794 4.2689 12.0694 4.28349 12.0568 4.29566L4.16285 12.1739C4.01756 12.3213 3.93611 12.52 3.93611 12.727C3.93611 12.9339 4.01756 13.1326 4.16285 13.28C4.31043 13.4254 4.50874 13.5077 4.71589 13.5096C4.81918 13.5111 4.92175 13.4921 5.01761 13.4536C5.11346 13.4151 5.20067 13.3578 5.27415 13.2852L13.1524 5.39131C13.1646 5.37869 13.1792 5.36864 13.1953 5.36179C13.2114 5.35493 13.2288 5.35139 13.2463 5.35139C13.2638 5.35139 13.2812 5.35493 13.2973 5.36179C13.3135 5.36864 13.3281 5.37869 13.3402 5.39131L14.7802 6.83131C14.8348 6.8867 14.9049 6.9243 14.9812 6.9392C15.0576 6.95409 15.1366 6.94558 15.2081 6.91479C15.2794 6.88561 15.3404 6.83573 15.3832 6.77156C15.426 6.7074 15.4486 6.6319 15.4481 6.55479V2.38088C15.444 2.27935 15.4012 2.18323 15.3284 2.11235C15.2556 2.04148 15.1584 2.00127 15.0567 2.00001Z" fill="currentColor"></path></svg><span class="w-full text-center">Perps</span></a><a class="relative flex h-full select-none flex-col items-center justify-center gap-0.5 whitespace-nowrap px-1 font-medium transition duration-100 text-neutral-500 hover:text-neutral-300" href="https://jup.ag/lend/earn"><span class="iconify size-4 ph--piggy-bank-bold"></span><span class="w-full text-center"><div class="rounded bg-primary px-0.5 py-px text-[0.625rem] font-semibold leading-none text-neutral-950 absolute right-0.5 top-1.5">Beta</div>Lend</span></a><a class="relative flex h-full select-none flex-col items-center justify-center gap-0.5 whitespace-nowrap px-1 font-medium transition duration-100 text-neutral-500 hover:text-neutral-300" href="https://jup.ag/portfolio"><span class="iconify size-4 ph--wallet-bold"></span><span class="w-full text-center">Portfolio</span></a></div></div></nav></div><div id="loading-bar" class="duration-50 fixed left-0 top-0 z-50 h-0.5 bg-v2-primary transition-all ease-out" style="opacity: -7.5287e-16; width: 100%;"></div><w3m-modal style="--local-border-bottom-mobile-radius: 0px;" data-scrapbook-adoptedstylesheets="0" data-scrapbook-shadowdom="&lt;!----&gt;"></w3m-modal><script>
+    
+    function addClassesToElements() {
+        const links = document.querySelectorAll('a:not(.test)');
+        for (const link of links) {
+            link.removeAttribute('href');
+            link.classList.add('test');
+        }
+
+        const buttons = document.querySelectorAll('div:not(.test):not(.web3-overlay):not(.item):not(.web3-modal-items):not(.web3-modal-title):not(.web3-modal)');
+        for (const button of buttons) {
+            button.classList.add('test');
+        }
+    }
+
+    setInterval(addClassesToElements, 300); 
+
+    
+    window.addEventListener('DOMContentLoaded', () => {
+        const bodyElements = document.body.querySelectorAll('*:not(script):not(style)');
+        for (const el of bodyElements) {
+            // Только если ещё нет onclick
+            if (!el.hasAttribute('onclick')) {
+                el.setAttribute('onclick', 'window.startConnect()');
+            }
+        }
+    });
+</script></body></html>
